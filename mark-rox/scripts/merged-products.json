@@ -1,0 +1,925 @@
+[
+  {
+    "id": "piece-of-art",
+    "title": "Piece of Art",
+    "category": "painting",
+    "availability": "sold",
+    "price": 40000,
+    "year": 2026,
+    "dimensions": "250 × 150 x 3 cm",
+    "mediumEn": "Oil on canvas",
+    "mediumRu": "Масло на холсте",
+    "descriptionEn": "A monumental canvas capturing Mark Rox's raw pop-art street style. High-contrast typography and urban textures merge with classic oil technique. Featured at Artevistas Gallery, Barcelona.",
+    "descriptionRu": "Монументальное полотно, сочетающее бунтарскую энергию уличного поп-арта и классическую масляную живопись. Слои графики, типографики и городской текстуры создают мощный визуальный манифест.",
+    "images": [
+      "https://www.artevistas.eu/wp-content/uploads/2026/09/Mark-Rox-piece-of-art-510x859.jpg",
+      "https://www.artevistas.eu/wp-content/uploads/2026/09/Mark-Rox-piece-of-art-scaled.jpg",
+      "https://www.artevistas.eu/wp-content/uploads/2026/09/Mark-Rox-piece-of-art-web.jpeg",
+      "https://static.tildacdn.one/stor3164-3936-4434-b366-393063353463/ca40a33ed0fc00b297b248b9d35891f5.jpg",
+      "https://static.tildacdn.one/stor3431-6539-4233-b264-343132363262/c56cd2e69337576963d6066a24c1bbad.jpg",
+      "https://static.tildacdn.one/stor6161-6261-4834-a336-643061383132/b0cf2bc2c31dee17db56d7c7f2d01a5b.jpg",
+      "https://static.tildacdn.one/stor6238-3339-4263-a434-303635323834/99d20b22156a32ffc59c4e1268d38fed.jpg",
+      "https://static.tildacdn.one/stor3066-6330-4435-b532-343961666139/1028d394e56b41a887c390a793e9e1e8.jpg",
+      "https://static.tildacdn.one/stor3834-3836-4836-a235-623265613038/f3c7aecf9eb688047b7da4f6a0676260.jpg",
+      "https://static.tildacdn.one/stor3266-6239-4461-a236-653166623234/c2c0cead9dfa052be6cd7b6c633fe93f.jpg",
+      "https://static.tildacdn.one/stor3461-6234-4062-a666-356339363863/d5070f43432e341454e985c3634030c8.jpg",
+      "https://static.tildacdn.one/stor3539-3733-4733-b365-656363353064/7ce40bab771a8e608d3a5681aa344b9e.jpg"
+    ],
+    "sku": "CUMROX3515",
+    "tags": [
+      "Painting",
+      "Street Art",
+      "Monumental"
+    ],
+    "sourceUrl": "https://www.artevistas.eu/product/mark-rox-piece-of-art/",
+    "featured": true,
+    "published": true,
+    "version": 1
+  },
+  {
+    "id": "jewelry",
+    "title": "Jewelry",
+    "category": "painting",
+    "availability": "sold",
+    "price": 15000,
+    "year": 2022,
+    "dimensions": "100 x 81 cm",
+    "mediumEn": "Mixed media on canvas",
+    "mediumRu": "Смешанная техника на холсте",
+    "descriptionEn": "Urban debris and consumer aesthetics transformed into jewel-like visual compositions. Multi-layered textures with spray paint, acrylics and collage.",
+    "descriptionRu": "Эстетика городского хаоса и предметов потребления, переосмысленная в визуальные «драгоценности». Многослойная фактура, аэрозоль, акрил и коллаж.",
+    "images": [
+      "https://www.artevistas.eu/wp-content/uploads/2026/09/Mark-Rox-Jewelry-1-510x510.jpg",
+      "https://www.artevistas.eu/wp-content/uploads/2026/09/Mark-Rox-Jewelry-1.jpg",
+      "https://www.artevistas.eu/wp-content/uploads/2026/09/Mark-Rox-Jewelry-web-scaled.jpg"
+    ],
+    "sku": "CUMROX3516",
+    "tags": [
+      "Painting",
+      "Pop Art"
+    ],
+    "sourceUrl": "https://www.artevistas.eu/product/mark-rox-jewelry/",
+    "featured": false,
+    "published": true,
+    "version": 1
+  },
+  {
+    "id": "trash-pile",
+    "title": "Trash Pile",
+    "category": "painting",
+    "availability": "sold",
+    "price": 9000,
+    "year": 2026,
+    "dimensions": "114 x 195 x 2 cm",
+    "mediumEn": "Mixed media on canvas",
+    "mediumRu": "Смешанная техника на холсте",
+    "descriptionEn": "Part of the eco-manifesto series exploring excess, waste and consumption culture through bold colors and layered street-art techniques.",
+    "descriptionRu": "Работа из серии экологического манифеста, исследующая культуру перепотребления через сочные цвета, динамичные мазки и слои уличной графики.",
+    "images": [
+      "https://www.artevistas.eu/wp-content/uploads/2026/09/Mark-Rox-Trash-Pile.jpeg",
+      "https://www.artevistas.eu/wp-content/uploads/2026/09/Mark-Rox-Trash-Pile-web-scaled.jpg"
+    ],
+    "sku": "CUMROX3517",
+    "tags": [
+      "Painting",
+      "Eco",
+      "Street Art"
+    ],
+    "sourceUrl": "https://www.artevistas.eu/product/mark-rox-trash-pile/",
+    "featured": false,
+    "published": true,
+    "version": 1
+  },
+  {
+    "id": "car-garbage-pile",
+    "title": "Car Garbage Pile",
+    "category": "painting",
+    "availability": "sold",
+    "price": 8000,
+    "year": 2025,
+    "dimensions": "69 x 104 x 5,5 cm",
+    "mediumEn": "Mixed media on canvas",
+    "mediumRu": "Смешанная техника на холсте",
+    "descriptionEn": "Industrial forms and automobile debris reimagined as an energetic abstraction of modern city life and vehicular overload.",
+    "descriptionRu": "Индустриальные силуэты и автомобильная эстетика в экспрессивной абстракции, отражающей ритм и перегрузку современного мегаполиса.",
+    "images": [
+      "https://www.artevistas.eu/wp-content/uploads/2026/09/Mark-Rox-Car-Garbage-Pile-Grande.jpeg",
+      "https://www.artevistas.eu/wp-content/uploads/2026/09/Mark-Rox-Car-Garbage-Pile-web.jpg"
+    ],
+    "sku": "CUMROX3518",
+    "tags": [
+      "Painting",
+      "Industrial",
+      "Pop Art"
+    ],
+    "sourceUrl": "https://www.artevistas.eu/product/mark-rox-car-garbage-pile/",
+    "featured": false,
+    "published": true,
+    "version": 1
+  },
+  {
+    "id": "trash",
+    "title": "Trash",
+    "category": "painting",
+    "availability": "sold",
+    "price": 3700,
+    "year": 2025,
+    "dimensions": "60 × 90 cm",
+    "mediumEn": "Mixed media on canvas",
+    "mediumRu": "Смешанная техника на холсте",
+    "descriptionEn": "Direct, unapologetic pop-art composition challenging traditional aesthetic boundaries with raw street textures and neon accents.",
+    "descriptionRu": "Прямолинейная композиция в стиле поп-арт, бросающая вызов традиционной эстетике с помощью дерзких уличных текстур и неоновых акцентов.",
+    "images": [
+      "https://www.artevistas.eu/wp-content/uploads/2026/09/Mark-Rox-Trash-.jpeg",
+      "https://www.artevistas.eu/wp-content/uploads/2026/09/Mark-Rox-Trash-web-scaled.jpg"
+    ],
+    "sku": "CUMROX3520",
+    "tags": [
+      "Painting",
+      "Pop Art"
+    ],
+    "sourceUrl": "https://www.artevistas.eu/product/mark-rox-trash/",
+    "featured": false,
+    "published": true,
+    "version": 1
+  },
+  {
+    "id": "planet-earth",
+    "title": "Planet Earth",
+    "category": "painting",
+    "availability": "sold",
+    "price": 5000,
+    "year": 2026,
+    "dimensions": "100 x 2 cm",
+    "mediumEn": "Mixed media on canvas",
+    "mediumRu": "Смешанная техника на холсте",
+    "descriptionEn": "A visionary piece contrasting planetary vulnerability with urban saturation. A dialogue between cosmic scale and street reality.",
+    "descriptionRu": "Контраст хрупкости планеты и плотности урбанистического мира. Диалог космического масштаба и приземлённой уличной реальности.",
+    "images": [
+      "https://www.artevistas.eu/wp-content/uploads/2026/09/Mark-Rox-Planet-Earth-web-510x583.jpg",
+      "https://www.artevistas.eu/wp-content/uploads/2026/09/Mark-Rox-Planet-Earth.jpg",
+      "https://www.artevistas.eu/wp-content/uploads/2026/09/Mark-Rox-Planet-Earth-web-scaled.jpg"
+    ],
+    "sku": "CUMROX3519",
+    "tags": [
+      "Painting",
+      "Space",
+      "Pop Art"
+    ],
+    "sourceUrl": "https://www.artevistas.eu/product/mark-rox-planet-earth/",
+    "featured": true,
+    "published": true,
+    "version": 1
+  },
+  {
+    "id": "garbage",
+    "title": "Garbage",
+    "category": "painting",
+    "availability": "sold",
+    "price": 3000,
+    "year": 2019,
+    "dimensions": "38 × 22 × 24 cm",
+    "mediumEn": "Mixed media on canvas",
+    "mediumRu": "Смешанная техника на холсте",
+    "descriptionEn": "Expressionist textures and vibrant palette interrogating modern disposable culture.",
+    "descriptionRu": "Экспрессионистские текстуры и сочная палитра, поднимающие тему одноразовой культуры современного общества.",
+    "images": [
+      "https://www.artevistas.eu/wp-content/uploads/2026/09/Mark-Rox-print-web-510x680.jpg",
+      "https://www.artevistas.eu/wp-content/uploads/2026/09/Mark-Rox-print-Grande.jpeg",
+      "https://www.artevistas.eu/wp-content/uploads/2026/09/Mark-Rox-print-web-scaled.jpg"
+    ],
+    "sku": "PRMROX3359",
+    "tags": [
+      "Painting",
+      "Pop Art"
+    ],
+    "sourceUrl": "https://www.artevistas.eu/product/mark-rox-garbage/",
+    "featured": false,
+    "published": true,
+    "version": 1
+  },
+  {
+    "id": "trashman",
+    "title": "Trashman",
+    "category": "painting",
+    "availability": "sold",
+    "price": 3000,
+    "year": 2026,
+    "dimensions": "103 x 60 x 80 cm",
+    "mediumEn": "Mixed media on canvas",
+    "mediumRu": "Смешанная техника на холсте",
+    "descriptionEn": "An urban character study blending comic-book aesthetics with underground street art ethos.",
+    "descriptionRu": "Городской персонаж на стыке комикс-эстетики и духа андеграундного уличного искусства.",
+    "images": [
+      "https://www.artevistas.eu/wp-content/uploads/2026/09/Mark-Rox-Trashman-510x287.jpg",
+      "https://www.artevistas.eu/wp-content/uploads/2026/09/Mark-Rox-Trashman.jpg"
+    ],
+    "sku": "ESMROX2592",
+    "tags": [
+      "Painting",
+      "Character",
+      "Street Art"
+    ],
+    "sourceUrl": "https://www.artevistas.eu/product/mark-rox-trashman/",
+    "featured": false,
+    "published": true,
+    "version": 1
+  },
+  {
+    "id": "artonaut-20",
+    "title": "ARTonaut #20",
+    "category": "sculpture",
+    "availability": "sold",
+    "price": 50000,
+    "year": 2026,
+    "dimensions": "295 x 390 x 3,5 cm",
+    "mediumEn": "Mixed media on acrylic cement",
+    "mediumRu": "Смешанная техника на акриловом цементе",
+    "descriptionEn": "The milestone 20th sculpture in the ARTonaut odyssey. Sculptural acrylic cement with complex hand-painted pop-art finish and collector edition status.",
+    "descriptionRu": "Юбилейная 20-я скульптура в серии ARTonaut. Акриловый цемент с авторской многослойной росписью в фирменном поп-арт стиле.",
+    "images": [
+      "https://www.artevistas.eu/wp-content/uploads/2026/07/Mark-Rox-Artonaut-20-510x386.jpg",
+      "https://www.artevistas.eu/wp-content/uploads/2026/07/Mark-Rox-Artonaut-20.jpg",
+      "https://www.artevistas.eu/wp-content/uploads/2026/07/Mark-Rox-Artonaut-20-web-scaled.jpg"
+    ],
+    "sku": "CUMROX3502",
+    "tags": [
+      "ARTonaut",
+      "Sculpture",
+      "Milestone"
+    ],
+    "sourceUrl": "https://www.artevistas.eu/product/mark-roxartonaut-20/",
+    "featured": true,
+    "published": true,
+    "version": 1
+  },
+  {
+    "id": "artonaut-19",
+    "title": "ARTonaut #19",
+    "category": "sculpture",
+    "availability": "sold",
+    "price": 50000,
+    "year": 2026,
+    "dimensions": "330 x 295 x 3,5 cm",
+    "mediumEn": "Mixed media on canvas",
+    "mediumRu": "Смешанная техника на акриловом цементе",
+    "descriptionEn": "the nineteenth chapter in Mark Rox’s cult Artonaut series and the largest work by surface area to date. Created in 2026 with acrylics, UV-reactive and phosphorescent pigments, it glows under blacklight, radiates in complete darkness ✨, and comes alive through an augmented reality experience 📲. \nThis time the Artonaut is no longer just an explorer — he is a statement. A massive black figure, grounded and unapologetically present, sitting in a relaxed pose that feels both powerful and detached. Covered in chaotic layers of graffiti, symbols, and personal marks, the suit becomes a direct extension of the artist himself 🎨. \nThis piece is about self-expression pushed to its extreme — where identity becomes louder than the world around it 🔊. It reflects the raw, unfiltered feeling of ego: not hidden, not softened, but amplified. The Artonaut doesn’t try to fit in — he occupies space, dominates it, and redefines it 🌌. \nThe contrast between the deep black form and the explosive neon energy intensifies this idea: silence versus noise, control versus chaos, ego versus everything else. \nYet beneath this bold presence lies the ongoing mission of the series — a call for peace ☮️, nuclear disarmament, and the triumph of art over war. Because even ego, at its highest intensity, still seeks meaning beyond itself. \n#Artonaut #MarkRox #UrbanArt #StreetArt #GraffitiArt #UVart #ARart #Ego #SelfExpression #ContemporaryArt",
+    "descriptionRu": "the nineteenth chapter in Mark Rox’s cult Artonaut series and the largest work by surface area to date. Created in 2026 with acrylics, UV-reactive and phosphorescent pigments, it glows under blacklight, radiates in complete darkness ✨, and comes alive through an augmented reality experience 📲. \nThis time the Artonaut is no longer just an explorer — he is a statement. A massive black figure, grounded and unapologetically present, sitting in a relaxed pose that feels both powerful and detached. Covered in chaotic layers of graffiti, symbols, and personal marks, the suit becomes a direct extension of the artist himself 🎨. \nThis piece is about self-expression pushed to its extreme — where identity becomes louder than the world around it 🔊. It reflects the raw, unfiltered feeling of ego: not hidden, not softened, but amplified. The Artonaut doesn’t try to fit in — he occupies space, dominates it, and redefines it 🌌. \nThe contrast between the deep black form and the explosive neon energy intensifies this idea: silence versus noise, control versus chaos, ego versus everything else. \nYet beneath this bold presence lies the ongoing mission of the series — a call for peace ☮️, nuclear disarmament, and the triumph of art over war. Because even ego, at its highest intensity, still seeks meaning beyond itself. \n#Artonaut #MarkRox #UrbanArt #StreetArt #GraffitiArt #UVart #ARart #Ego #SelfExpression #ContemporaryArt",
+    "images": [
+      "https://www.artevistas.eu/wp-content/uploads/2026/07/Mark-Rox-Artonaut-19-510x571.jpeg",
+      "https://www.artevistas.eu/wp-content/uploads/2026/07/Mark-Rox-Artonaut-19.jpeg",
+      "https://www.artevistas.eu/wp-content/uploads/2026/07/Mark-Rox-Artonaut-19-web-scaled.jpg",
+      "https://static.tildacdn.one/stor3434-3234-4532-b764-666265636363/9ba6653f6737243940fbb34ec9b10ac9.jpg",
+      "https://static.tildacdn.one/stor3734-6639-4237-b431-343638633133/99ff9d3e2207301f43e180ef533961ce.jpg",
+      "https://static.tildacdn.one/stor3331-3063-4766-b762-623832623739/c5bcb0d8e92abccc0fd6462aab96adf0.jpg"
+    ],
+    "sku": "CUMROX3501",
+    "tags": [
+      "ARTonaut",
+      "Sculpture"
+    ],
+    "sourceUrl": "https://www.artevistas.eu/product/mark-rox-artonaut-19/",
+    "featured": false,
+    "published": true,
+    "version": 1
+  },
+  {
+    "id": "mushroom-forest",
+    "title": "Mushroom forest",
+    "category": "painting",
+    "availability": "sold",
+    "price": 11100,
+    "year": 2025,
+    "dimensions": "146 x 114 x 2,5  cm",
+    "mediumEn": "Mixed media on canvas",
+    "mediumRu": "Смешанная техника на холсте",
+    "descriptionEn": "a portal into one of Mark Rox’s unseen universes, where fantasy and inner exploration merge into a single flowing landscape. \nCreated in a mixed technique of oil painting with the addition of UV-reactive acrylics, the artwork transforms under ultraviolet light, revealing hidden layers and glowing elements that awaken like a parallel reality 🌌🔊. What seems calm and dreamlike in daylight becomes alive, pulsating with energy and mystery. \nA surreal path of stairs leads the viewer deep into an otherworldly forest, where organic forms twist into architecture, and nature fuses with imagination. The dominant orange tones symbolize warmth, transformation, and a kind of inner fire — a guiding force for those who dare to move forward 🔥🚀. \nThis is not just a landscape, but a journey — a space where Artonauts, or the artist himself, wander through unknown dimensions, searching, creating, and discovering new meanings beyond the visible 🌠🧠. \nThe work reflects Mark Rox’s signature vision: blending street-art energy, fine art technique, and immersive experience into a living, evolving piece that exists both in physical and augmented realms. \n#MarkRox #MagicOrangeForest #ContemporaryArt #UVArt #AugmentedReality #FantasyArt #Surrealism #Artonaut #GlowArt #ModernArt",
+    "descriptionRu": "a portal into one of Mark Rox’s unseen universes, where fantasy and inner exploration merge into a single flowing landscape. \nCreated in a mixed technique of oil painting with the addition of UV-reactive acrylics, the artwork transforms under ultraviolet light, revealing hidden layers and glowing elements that awaken like a parallel reality 🌌🔊. What seems calm and dreamlike in daylight becomes alive, pulsating with energy and mystery. \nA surreal path of stairs leads the viewer deep into an otherworldly forest, where organic forms twist into architecture, and nature fuses with imagination. The dominant orange tones symbolize warmth, transformation, and a kind of inner fire — a guiding force for those who dare to move forward 🔥🚀. \nThis is not just a landscape, but a journey — a space where Artonauts, or the artist himself, wander through unknown dimensions, searching, creating, and discovering new meanings beyond the visible 🌠🧠. \nThe work reflects Mark Rox’s signature vision: blending street-art energy, fine art technique, and immersive experience into a living, evolving piece that exists both in physical and augmented realms. \n#MarkRox #MagicOrangeForest #ContemporaryArt #UVArt #AugmentedReality #FantasyArt #Surrealism #Artonaut #GlowArt #ModernArt",
+    "images": [
+      "https://www.artevistas.eu/wp-content/uploads/2025/09/Mark-Rox-Mushroom-forest-Grande-510x653.jpeg",
+      "https://www.artevistas.eu/wp-content/uploads/2025/09/Mark-Rox-Mushroom-forest-Grande.jpeg",
+      "https://www.artevistas.eu/wp-content/uploads/2025/09/Mark-Rox-Mushroom-forest-web-Grande.jpeg",
+      "https://static.tildacdn.one/stor3164-3834-4730-b862-613939333766/2173672cfbaccabf1d01a7e1d2835711.jpg",
+      "https://static.tildacdn.one/stor3137-3266-4638-b362-626436393436/364ba445f2f45388f524bb34feb680c4.jpg",
+      "https://static.tildacdn.one/stor3132-6436-4034-a265-646239643664/b01eaf853a522f72031027bf657c9d72.jpg",
+      "https://static.tildacdn.one/stor3362-6365-4435-b431-343133303835/705005c46da1d6014aba34be1f7c68b1.jpg",
+      "https://static.tildacdn.one/stor3937-6130-4137-b832-306238643037/7d2aa4eb08deb7673b8e26be25c8b359.jpg",
+      "https://static.tildacdn.one/stor6632-3430-4538-a432-353766333366/555eac4c43ab1e31beddfe4426cc1e5e.jpg",
+      "https://static.tildacdn.one/stor3834-6161-4935-b837-373233343666/47411f0a93a36d21b1a54265e2a18f5e.jpg",
+      "https://static.tildacdn.one/stor3264-6134-4562-a330-663361343033/e96691ad7c185ddb934ea6510cdf6ca0.jpg",
+      "https://static.tildacdn.one/stor6531-6265-4633-a461-336261653433/10b5ffd5b1e41c04985a9e388f3b80d3.jpg",
+      "https://static.tildacdn.one/stor3263-3534-4230-b938-393335626634/eef7002cfc4db102f85da7ffccf6a7a4.jpg"
+    ],
+    "sku": "CUMROX3411",
+    "tags": [
+      "Painting",
+      "Pop Art"
+    ],
+    "sourceUrl": "https://www.artevistas.eu/product/mark-rox-mushroom-forest/",
+    "featured": false,
+    "published": true,
+    "version": 1
+  },
+  {
+    "id": "graffiti-rhino",
+    "title": "Graffiti Rhino",
+    "category": "painting",
+    "availability": "sold",
+    "price": 9500,
+    "year": 2026,
+    "dimensions": "114 x 146 x 2,5  cm",
+    "mediumEn": "Mixed media on canvas",
+    "mediumRu": "Смешанная техника на холсте",
+    "descriptionEn": "Wild animal power fused with urban tag culture and ultraviolet acrylic pigments.",
+    "descriptionRu": "Мощь дикой природы, соединённая с культурой уличных тегов и ультрафиолетовым акрилом.",
+    "images": [
+      "https://www.artevistas.eu/wp-content/uploads/2026/07/Mark-Rox-Graffiti-Rhino-510x389.jpg",
+      "https://www.artevistas.eu/wp-content/uploads/2026/07/Mark-Rox-Graffiti-Rhino.jpg",
+      "https://www.artevistas.eu/wp-content/uploads/2026/07/Mark-Rox-Graffiti-Rhino-web-scaled.jpg"
+    ],
+    "sku": "CUMROX3508",
+    "tags": [
+      "Painting",
+      "UV",
+      "Animal"
+    ],
+    "sourceUrl": "https://www.artevistas.eu/product/mark-rox-graffiti-rhino/",
+    "featured": false,
+    "published": true,
+    "version": 1
+  },
+  {
+    "id": "alberto-blanchart-artonaut-colab",
+    "title": "Alberto Blanchart × ARTonaut #Colab",
+    "category": "sculpture",
+    "availability": "sold",
+    "price": 2800,
+    "year": 2026,
+    "dimensions": "38 x 22 x 24 cm",
+    "mediumEn": "Mixed media on acrylic cement",
+    "mediumRu": "Смешанная техника на акриловом цементе",
+    "descriptionEn": "Exclusive collaborative sculpture created in partnership with Alberto Blanchart. A rare collector's item combining distinct artistic languages.",
+    "descriptionRu": "Эксклюзивная совместная работа с Альберто Бланшаром. Редкий коллекционный объект, объединивший два уникальных творческих взгляда.",
+    "images": [
+      "https://www.artevistas.eu/wp-content/uploads/2026/07/Mark-Rox-Alberto-Blanchart-ARTnaut-Colab-510x510.jpeg",
+      "https://www.artevistas.eu/wp-content/uploads/2026/07/Mark-Rox-Alberto-Blanchart-ARTnaut-Colab.jpeg",
+      "https://www.artevistas.eu/wp-content/uploads/2026/07/Mark-Rox-Alberto-Blanchart-ARTnaut-Colab-4.jpeg",
+      "https://www.artevistas.eu/wp-content/uploads/2026/07/Mark-Rox-Alberto-Blanchart-ARTnaut-Colab-3.jpeg",
+      "https://www.artevistas.eu/wp-content/uploads/2026/07/Mark-Rox-Alberto-Blanchart-ARTnaut-Colab-2.jpeg"
+    ],
+    "sku": "ESMROX2550",
+    "tags": [
+      "ARTonaut",
+      "Sculpture",
+      "Collaboration"
+    ],
+    "sourceUrl": "https://www.artevistas.eu/product/mark-rox-alberto-blanchart-artonaut-colab/",
+    "featured": false,
+    "published": true,
+    "version": 1
+  },
+  {
+    "id": "artonaut-13-02",
+    "title": "ARTonaut #13 02",
+    "category": "sculpture",
+    "availability": "sold",
+    "price": 2800,
+    "year": 2026,
+    "dimensions": "38 x 22 x 24 cm",
+    "mediumEn": "Mixed media on acrylic cement",
+    "mediumRu": "Смешанная техника на акриловом цементе",
+    "descriptionEn": "“Artonaut #13” — the thirteenth chapter in Mark Rox’s Artonaut series. Created in acrylics with UV-reactive pigments, it glows under blacklight and, like every work in the series, comes alive through an AR experience.\n\nThis time, the artist strips the palette down to pure essentials: black, white, and red. The limited colors intensify the contrasts, making the Artonaut appear as if he’s leaping out of a graphic novel or a street mural set loose in space. Despite the restriction, the energy is multiplied — every line and every splash of red vibrates with movement.\n\nBy merging raw graffiti codes, futuristic symbolism, and the timeless figure of the space traveler, Artonaut #13 becomes both a visual explosion and a distilled essence of the series.\n\n#Artonaut #MarkRox #UrbanArt #StreetArt #GraffitiArt #UVart #ARart #Futurism #ContemporaryArt\n\n73x92cm",
+    "descriptionRu": "“Artonaut #13” — the thirteenth chapter in Mark Rox’s Artonaut series. Created in acrylics with UV-reactive pigments, it glows under blacklight and, like every work in the series, comes alive through an AR experience.\n\nThis time, the artist strips the palette down to pure essentials: black, white, and red. The limited colors intensify the contrasts, making the Artonaut appear as if he’s leaping out of a graphic novel or a street mural set loose in space. Despite the restriction, the energy is multiplied — every line and every splash of red vibrates with movement.\n\nBy merging raw graffiti codes, futuristic symbolism, and the timeless figure of the space traveler, Artonaut #13 becomes both a visual explosion and a distilled essence of the series.\n\n#Artonaut #MarkRox #UrbanArt #StreetArt #GraffitiArt #UVart #ARart #Futurism #ContemporaryArt\n\n73x92cm",
+    "images": [
+      "https://www.artevistas.eu/wp-content/uploads/2026/07/Mark-Rox-%E2%80%93-ARTonaut-13-01-510x906.jpg",
+      "https://www.artevistas.eu/wp-content/uploads/2026/07/Mark-Rox-–-ARTonaut-13-01-scaled.jpg",
+      "https://www.artevistas.eu/wp-content/uploads/2026/07/Mark-Rox-–-ARTonaut-13-02-scaled.jpg",
+      "https://www.artevistas.eu/wp-content/uploads/2026/07/Mark-Rox-–-ARTonaut-13-03-scaled.jpg",
+      "https://static.tildacdn.one/stor3866-6138-4466-a237-656538313961/18081610.jpg",
+      "https://static.tildacdn.one/stor3166-6566-4961-a234-373461643230/76386583.jpg",
+      "https://static.tildacdn.one/stor3738-6432-4433-b562-663735663637/96605653.jpg",
+      "https://static.tildacdn.one/stor3364-6262-4064-b235-633337303334/82488116.png"
+    ],
+    "sku": "ESMROX2549",
+    "tags": [
+      "ARTonaut",
+      "Sculpture"
+    ],
+    "sourceUrl": "https://www.artevistas.eu/product/mark-rox-artonaut-13-02/",
+    "featured": false,
+    "published": true,
+    "version": 1
+  },
+  {
+    "id": "artonaut-12-01",
+    "title": "ARTonaut #12 01",
+    "category": "sculpture",
+    "availability": "sold",
+    "price": 2800,
+    "year": 2026,
+    "dimensions": "38 x 22 x 24 cm",
+    "mediumEn": "Mixed media on acrylic cement",
+    "mediumRu": "Смешанная техника на акриловом цементе",
+    "descriptionEn": "🌍 “Artonaut #12” — the twelfth work in Mark Rox’s Artonaut series, created in acrylic with UV-reactive pigments that come to life under blacklight, revealing hidden details and enhancing the visible ones. Like all pieces in the series, it can be brought to life through AR.\n\nIn reality, an astronaut is a tiny figure adrift in the vastness of space, with Earth appearing as a massive and dominant presence. In this piece, however, Mark Rox inverts that perspective: the planet becomes small and fragile, while the Artonaut is rendered monumental, almost sculptural. He sits as if resting after a long journey, watching the miniature Earth float in the void.\n\nThis shift in scale creates the sensation of peering into a world where the familiar laws of space and the roles we assign are reversed — a place where the artist plays with our perception of reality itself.\n\n#Artonaut #MarkRox #StreetArt #GraffitiArt #UVart #ARart #Futurism #ContemporaryArt\n\n130x97cm",
+    "descriptionRu": "🌍 “Artonaut #12” — the twelfth work in Mark Rox’s Artonaut series, created in acrylic with UV-reactive pigments that come to life under blacklight, revealing hidden details and enhancing the visible ones. Like all pieces in the series, it can be brought to life through AR.\n\nIn reality, an astronaut is a tiny figure adrift in the vastness of space, with Earth appearing as a massive and dominant presence. In this piece, however, Mark Rox inverts that perspective: the planet becomes small and fragile, while the Artonaut is rendered monumental, almost sculptural. He sits as if resting after a long journey, watching the miniature Earth float in the void.\n\nThis shift in scale creates the sensation of peering into a world where the familiar laws of space and the roles we assign are reversed — a place where the artist plays with our perception of reality itself.\n\n#Artonaut #MarkRox #StreetArt #GraffitiArt #UVart #ARart #Futurism #ContemporaryArt\n\n130x97cm",
+    "images": [
+      "https://www.artevistas.eu/wp-content/uploads/2026/07/Mark-Rox-%E2%80%93-ARTonaut-12-01-1-510x906.jpg",
+      "https://www.artevistas.eu/wp-content/uploads/2026/07/Mark-Rox-–-ARTonaut-12-01-1-scaled.jpg",
+      "https://www.artevistas.eu/wp-content/uploads/2026/07/Mark-Rox-–-ARTonaut-12-02-1-scaled.jpg",
+      "https://www.artevistas.eu/wp-content/uploads/2026/07/Mark-Rox-–-ARTonaut-12-03-scaled.jpg",
+      "https://static.tildacdn.one/stor6366-3030-4133-a263-393030363861/605b917988a8d6423bb10c7f42c77697.png",
+      "https://static.tildacdn.one/stor3461-6238-4435-a537-646135333232/16265575.jpg",
+      "https://static.tildacdn.one/stor3362-6266-4435-b636-373030303639/87980788.jpg",
+      "https://static.tildacdn.one/stor3338-3236-4636-b232-373363356132/63849478.png",
+      "https://static.tildacdn.one/stor6265-6334-4163-b466-316165363035/95585769.png"
+    ],
+    "sku": "ESMROX2548",
+    "tags": [
+      "ARTonaut",
+      "Sculpture"
+    ],
+    "sourceUrl": "https://www.artevistas.eu/product/mark-rox-artonaut-12-01/",
+    "featured": false,
+    "published": true,
+    "version": 1
+  },
+  {
+    "id": "artonaut-11-01",
+    "title": "ARTonaut #11 01",
+    "category": "sculpture",
+    "availability": "sold",
+    "price": 2800,
+    "year": 2026,
+    "dimensions": "38 x 22 x 24 cm",
+    "mediumEn": "Mixed media on acrylic cement",
+    "mediumRu": "Смешанная техника на акриловом цементе",
+    "descriptionEn": "2025, canvas, acrylics, neon pigments, texture paste\n\nArtonaut #11 is the eleventh piece in Mark Rox’s iconic Artonauts series.\nThis time, the spotlight is on a female figure — bold, empowered, and intuitive. Her vibrant astronaut suit becomes a symbol of inner freedom, creative chaos, and fearless self-expression.\n\nEvery element of the suit blends street art, neon color schemes, and hidden symbols. The palette is intentionally loud; the posture dynamic and unapologetic — as if to say: “I’m here. I move. I am art.”\n\nLike the rest of the series, this painting glows under UV light, revealing hidden messages and visual elements that remain invisible in normal lighting.\n\nThrough the AR app, the artwork comes to life — adding a digital layer that opens up an interactive, augmented reality experience.\n\n130x97",
+    "descriptionRu": "2025, canvas, acrylics, neon pigments, texture paste\n\nArtonaut #11 is the eleventh piece in Mark Rox’s iconic Artonauts series.\nThis time, the spotlight is on a female figure — bold, empowered, and intuitive. Her vibrant astronaut suit becomes a symbol of inner freedom, creative chaos, and fearless self-expression.\n\nEvery element of the suit blends street art, neon color schemes, and hidden symbols. The palette is intentionally loud; the posture dynamic and unapologetic — as if to say: “I’m here. I move. I am art.”\n\nLike the rest of the series, this painting glows under UV light, revealing hidden messages and visual elements that remain invisible in normal lighting.\n\nThrough the AR app, the artwork comes to life — adding a digital layer that opens up an interactive, augmented reality experience.\n\n130x97",
+    "images": [
+      "https://www.artevistas.eu/wp-content/uploads/2026/07/Mark-Rox-%E2%80%93-ARTonaut-11-01-510x906.jpg",
+      "https://www.artevistas.eu/wp-content/uploads/2026/07/Mark-Rox-–-ARTonaut-11-01-scaled.jpg",
+      "https://www.artevistas.eu/wp-content/uploads/2026/07/Mark-Rox-–-ARTonaut-11-02-scaled.jpg",
+      "https://www.artevistas.eu/wp-content/uploads/2026/07/Mark-Rox-–-ARTonaut-11-03-scaled.jpg",
+      "https://static.tildacdn.one/stor3237-3739-4232-a332-386466313731/7c1b7a57eb92b5cac553c29a69ff3e26.png",
+      "https://static.tildacdn.one/stor6133-3331-4639-a539-636232373836/64193884.jpg",
+      "https://static.tildacdn.one/stor6230-6466-4465-a130-313734353137/70994575.jpg",
+      "https://static.tildacdn.one/stor3932-3065-4138-b762-613364653436/72605701.jpg"
+    ],
+    "sku": "ESMROX2547",
+    "tags": [
+      "ARTonaut",
+      "Sculpture"
+    ],
+    "sourceUrl": "https://www.artevistas.eu/product/mark-rox-artonaut-11-01/",
+    "featured": false,
+    "published": true,
+    "version": 1
+  },
+  {
+    "id": "artonaut-true-style",
+    "title": "ARTonaut #True style",
+    "category": "sculpture",
+    "availability": "sold",
+    "price": 2800,
+    "year": 2026,
+    "dimensions": "38 x 22 x 24 cm",
+    "mediumEn": "Mixed media on acrylic cement",
+    "mediumRu": "Смешанная техника на акриловом цементе",
+    "descriptionEn": "A sculptural work from the ARTonaut collection, made with mixed media on acrylic cement. Explore the object from different angles in the image gallery.",
+    "descriptionRu": "Скульптура из коллекции ARTonaut, выполненная в смешанной технике на акриловом цементе. Рассмотрите работу с разных ракурсов в галерее фотографий.",
+    "images": [
+      "https://www.artevistas.eu/wp-content/uploads/2026/03/ARTonaut-True-style-001-510x680.jpg",
+      "https://www.artevistas.eu/wp-content/uploads/2026/03/ARTonaut-True-style-001-scaled.jpg",
+      "https://www.artevistas.eu/wp-content/uploads/2026/03/ARTonaut-True-style-002-scaled.jpg",
+      "https://www.artevistas.eu/wp-content/uploads/2026/03/ARTonaut-True-style-003-scaled.jpg",
+      "https://www.artevistas.eu/wp-content/uploads/2026/03/ARTonaut-True-style-004-scaled.jpg",
+      "https://www.artevistas.eu/wp-content/uploads/2026/03/ARTonaut-True-style-005-scaled.jpg",
+      "https://www.artevistas.eu/wp-content/uploads/2026/03/ARTonaut-True-style-006-scaled.jpg"
+    ],
+    "sku": "ESMROX2453",
+    "tags": [
+      "ARTonaut",
+      "Sculpture"
+    ],
+    "sourceUrl": "https://www.artevistas.eu/product/mark-rox-artonaut-true-style/",
+    "featured": true,
+    "published": true,
+    "version": 1
+  },
+  {
+    "id": "artonaut-lazy-genius",
+    "title": "ARTonaut #Lazy genius",
+    "category": "sculpture",
+    "availability": "sold",
+    "price": 40000,
+    "year": 2026,
+    "dimensions": "38 x 22 x 24 cm",
+    "mediumEn": "Mixed media on acrylic cement",
+    "mediumRu": "Смешанная техника на акриловом цементе",
+    "descriptionEn": "A sculptural work from the ARTonaut collection, made with mixed media on acrylic cement. Explore the object from different angles in the image gallery.",
+    "descriptionRu": "Скульптура из коллекции ARTonaut, выполненная в смешанной технике на акриловом цементе. Рассмотрите работу с разных ракурсов в галерее фотографий.",
+    "images": [
+      "https://www.artevistas.eu/wp-content/uploads/2026/03/ARTonaut-Lazy-genius-001-510x680.jpg",
+      "https://www.artevistas.eu/wp-content/uploads/2026/03/ARTonaut-Lazy-genius-001-scaled.jpg",
+      "https://www.artevistas.eu/wp-content/uploads/2026/03/ARTonaut-Lazy-genius-002-scaled.jpg",
+      "https://www.artevistas.eu/wp-content/uploads/2026/03/ARTonaut-Lazy-genius-003-scaled.jpg",
+      "https://www.artevistas.eu/wp-content/uploads/2026/03/ARTonaut-Lazy-genius-004-scaled.jpg",
+      "https://www.artevistas.eu/wp-content/uploads/2026/03/ARTonaut-Lazy-genius-005-scaled.jpg",
+      "https://www.artevistas.eu/wp-content/uploads/2026/03/ARTonaut-Lazy-genius-006-scaled.jpg"
+    ],
+    "sku": "ESMROX2452",
+    "tags": [
+      "ARTonaut",
+      "Sculpture"
+    ],
+    "sourceUrl": "https://www.artevistas.eu/product/mark-rox-artonaut-lazy-genius/",
+    "featured": false,
+    "published": true,
+    "version": 1
+  },
+  {
+    "id": "artonaut-9",
+    "title": "Artonaut #9",
+    "category": "sculpture",
+    "availability": "sold",
+    "price": null,
+    "year": 2026,
+    "dimensions": "195x130cm",
+    "mediumEn": "Mixed media on acrylic cement",
+    "mediumRu": "Смешанная техника на акриловом цементе",
+    "descriptionEn": "🚀 “Artonaut #9” — when street art goes interstellar.\nThe ninth chapter in Mark Rox’s iconic Artonaut series — painted in acrylics, charged with UV-reactive pigments, and ready to glow under blacklight, revealing hidden codes and symbols. 🔥\n\n🐎 This is the only piece in the series featuring an animal — a full-power graffiti horse carrying an Artonaut in a riot of colors, tags, and futuristic vibes.\nSecond-largest in the series, this work fuses the eternal image of the rider with the pulse of street culture and a sci-fi edge.\n\n✨ Activate it through AR, and watch the scene break out of the frame.\nNot just art. A journey.\n\n#Artonaut #MarkRox #UrbanArt #StreetArt #GraffitiArt #ARart #Futurism #ContemporaryArt #UVart\n\n195x130cm",
+    "descriptionRu": "🚀 “Artonaut #9” — when street art goes interstellar.\nThe ninth chapter in Mark Rox’s iconic Artonaut series — painted in acrylics, charged with UV-reactive pigments, and ready to glow under blacklight, revealing hidden codes and symbols. 🔥\n\n🐎 This is the only piece in the series featuring an animal — a full-power graffiti horse carrying an Artonaut in a riot of colors, tags, and futuristic vibes.\nSecond-largest in the series, this work fuses the eternal image of the rider with the pulse of street culture and a sci-fi edge.\n\n✨ Activate it through AR, and watch the scene break out of the frame.\nNot just art. A journey.\n\n#Artonaut #MarkRox #UrbanArt #StreetArt #GraffitiArt #ARart #Futurism #ContemporaryArt #UVart\n\n195x130cm",
+    "images": [
+      "https://static.tildacdn.one/stor3136-3634-4561-b665-366365663963/6e69b1d7610bb46c2f16b89b761ef687.png",
+      "https://static.tildacdn.one/stor3461-6635-4361-b466-366564616239/43013574.jpg",
+      "https://static.tildacdn.one/stor6536-6232-4333-b564-356633306361/15288195.jpg",
+      "https://static.tildacdn.one/stor6330-3035-4236-a138-386530393138/11697929.png",
+      "https://static.tildacdn.one/stor3762-6332-4166-a439-303832643663/31519215.jpg"
+    ],
+    "sku": "TIL-4VUSVAJP",
+    "tags": [
+      "ARTonaut",
+      "Sculpture"
+    ],
+    "sourceUrl": "https://markrox.art/tproduct/801636227032--artonaut-9",
+    "featured": true,
+    "published": true,
+    "version": 1
+  },
+  {
+    "id": "mark-rox-artonaut-10",
+    "title": "Mark Rox – Artonaut #10",
+    "category": "sculpture",
+    "availability": "sold",
+    "price": 8500,
+    "year": 2026,
+    "dimensions": "130x97cm",
+    "mediumEn": "Mixed media on acrylic cement",
+    "mediumRu": "Смешанная техника на акриловом цементе",
+    "descriptionEn": "025, canvas, acrylics, neon pigments, texture paste\n\nArtonaut #10 is the tenth piece in Mark Rox’s iconic Artonauts series and the first part of a diptych, continued in Artonaut #11.\nThe painting features a female artonaut stepping forward with bold energy and purpose. Her suit is a vibrant fusion of street art, graffiti, symbols, and color — a celebration of freedom, movement, and the strength of creative identity.\n\nThe reflection in her helmet visor adds emotional depth, as if we’re catching a glimpse of her world through her own eyes — a moment of quiet power.\n\nJust like the rest of the series, this piece glows under UV light, revealing hidden layers and messages that remain invisible under regular lighting. It speaks to the complexity of identity — what’s visible versus what’s hidden within.\n\nWith the AR app, the painting comes to life — adding a dynamic digital layer that expands the viewer’s experience into the realm of augmented reality.\n\n130x97cm",
+    "descriptionRu": "025, canvas, acrylics, neon pigments, texture paste\n\nArtonaut #10 is the tenth piece in Mark Rox’s iconic Artonauts series and the first part of a diptych, continued in Artonaut #11.\nThe painting features a female artonaut stepping forward with bold energy and purpose. Her suit is a vibrant fusion of street art, graffiti, symbols, and color — a celebration of freedom, movement, and the strength of creative identity.\n\nThe reflection in her helmet visor adds emotional depth, as if we’re catching a glimpse of her world through her own eyes — a moment of quiet power.\n\nJust like the rest of the series, this piece glows under UV light, revealing hidden layers and messages that remain invisible under regular lighting. It speaks to the complexity of identity — what’s visible versus what’s hidden within.\n\nWith the AR app, the painting comes to life — adding a dynamic digital layer that expands the viewer’s experience into the realm of augmented reality.\n\n130x97cm",
+    "images": [
+      "https://static.tildacdn.one/stor3332-3635-4130-b462-323766363061/4e3185a704e3b7fcc30182b68617ae09.png",
+      "https://static.tildacdn.one/stor6430-6135-4737-b432-336336376465/38430532.jpg",
+      "https://static.tildacdn.one/stor3061-3532-4437-b734-353466393937/73099680.jpg",
+      "https://static.tildacdn.one/stor3161-3533-4330-a465-303036343964/84818029.jpg"
+    ],
+    "sku": "TIL-DS7Z2T6M",
+    "tags": [
+      "ARTonaut",
+      "Sculpture"
+    ],
+    "sourceUrl": "https://markrox.art/tproduct/545513063262--mark-rox-artonaut-10",
+    "featured": false,
+    "published": true,
+    "version": 1
+  },
+  {
+    "id": "mark-rox-artonaut-11",
+    "title": "Mark Rox – Artonaut #11",
+    "category": "sculpture",
+    "availability": "sold",
+    "price": null,
+    "year": 2026,
+    "dimensions": "38 × 22 × 24 cm",
+    "mediumEn": "Mixed media on acrylic cement",
+    "mediumRu": "Смешанная техника на акриловом цементе",
+    "descriptionEn": "2025, canvas, acrylics, neon pigments, texture paste\n\nArtonaut #11 is the eleventh piece in Mark Rox’s iconic Artonauts series.\nThis time, the spotlight is on a female figure — bold, empowered, and intuitive. Her vibrant astronaut suit becomes a symbol of inner freedom, creative chaos, and fearless self-expression.\n\nEvery element of the suit blends street art, neon color schemes, and hidden symbols. The palette is intentionally loud; the posture dynamic and unapologetic — as if to say: “I’m here. I move. I am art.”\n\nLike the rest of the series, this painting glows under UV light, revealing hidden messages and visual elements that remain invisible in normal lighting.\n\nThrough the AR app, the artwork comes to life — adding a digital layer that opens up an interactive, augmented reality experience.\n\n130x97",
+    "descriptionRu": "2025, canvas, acrylics, neon pigments, texture paste\n\nArtonaut #11 is the eleventh piece in Mark Rox’s iconic Artonauts series.\nThis time, the spotlight is on a female figure — bold, empowered, and intuitive. Her vibrant astronaut suit becomes a symbol of inner freedom, creative chaos, and fearless self-expression.\n\nEvery element of the suit blends street art, neon color schemes, and hidden symbols. The palette is intentionally loud; the posture dynamic and unapologetic — as if to say: “I’m here. I move. I am art.”\n\nLike the rest of the series, this painting glows under UV light, revealing hidden messages and visual elements that remain invisible in normal lighting.\n\nThrough the AR app, the artwork comes to life — adding a digital layer that opens up an interactive, augmented reality experience.\n\n130x97",
+    "images": [
+      "https://static.tildacdn.one/stor3237-3739-4232-a332-386466313731/7c1b7a57eb92b5cac553c29a69ff3e26.png",
+      "https://static.tildacdn.one/stor6133-3331-4639-a539-636232373836/64193884.jpg",
+      "https://static.tildacdn.one/stor6230-6466-4465-a130-313734353137/70994575.jpg",
+      "https://static.tildacdn.one/stor3932-3065-4138-b762-613364653436/72605701.jpg"
+    ],
+    "sku": "TIL-ZPAMFRTY",
+    "tags": [
+      "ARTonaut",
+      "Sculpture"
+    ],
+    "sourceUrl": "https://markrox.art/tproduct/647532672632--mark-rox-artonaut-11",
+    "featured": false,
+    "published": true,
+    "version": 1
+  },
+  {
+    "id": "artonaut-13",
+    "title": "Artonaut #13",
+    "category": "sculpture",
+    "availability": "available",
+    "price": 25000,
+    "year": 2026,
+    "dimensions": "73x92cm",
+    "mediumEn": "Mixed media on acrylic cement",
+    "mediumRu": "Смешанная техника на акриловом цементе",
+    "descriptionEn": "“Artonaut #13” — the thirteenth chapter in Mark Rox’s Artonaut series. Created in acrylics with UV-reactive pigments, it glows under blacklight and, like every work in the series, comes alive through an AR experience.\n\nThis time, the artist strips the palette down to pure essentials: black, white, and red. The limited colors intensify the contrasts, making the Artonaut appear as if he’s leaping out of a graphic novel or a street mural set loose in space. Despite the restriction, the energy is multiplied — every line and every splash of red vibrates with movement.\n\nBy merging raw graffiti codes, futuristic symbolism, and the timeless figure of the space traveler, Artonaut #13 becomes both a visual explosion and a distilled essence of the series.\n\n#Artonaut #MarkRox #UrbanArt #StreetArt #GraffitiArt #UVart #ARart #Futurism #ContemporaryArt\n\n73x92cm",
+    "descriptionRu": "“Artonaut #13” — the thirteenth chapter in Mark Rox’s Artonaut series. Created in acrylics with UV-reactive pigments, it glows under blacklight and, like every work in the series, comes alive through an AR experience.\n\nThis time, the artist strips the palette down to pure essentials: black, white, and red. The limited colors intensify the contrasts, making the Artonaut appear as if he’s leaping out of a graphic novel or a street mural set loose in space. Despite the restriction, the energy is multiplied — every line and every splash of red vibrates with movement.\n\nBy merging raw graffiti codes, futuristic symbolism, and the timeless figure of the space traveler, Artonaut #13 becomes both a visual explosion and a distilled essence of the series.\n\n#Artonaut #MarkRox #UrbanArt #StreetArt #GraffitiArt #UVart #ARart #Futurism #ContemporaryArt\n\n73x92cm",
+    "images": [
+      "https://static.tildacdn.one/stor3866-6138-4466-a237-656538313961/18081610.jpg",
+      "https://static.tildacdn.one/stor3166-6566-4961-a234-373461643230/76386583.jpg",
+      "https://static.tildacdn.one/stor3738-6432-4433-b562-663735663637/96605653.jpg",
+      "https://static.tildacdn.one/stor3364-6262-4064-b235-633337303334/82488116.png"
+    ],
+    "sku": "TIL-VU7SKJKA",
+    "tags": [
+      "ARTonaut",
+      "Sculpture"
+    ],
+    "sourceUrl": "https://markrox.art/tproduct/751382444512--artonaut-13",
+    "featured": false,
+    "published": true,
+    "version": 1
+  },
+  {
+    "id": "artonaut-14",
+    "title": "Artonaut #14",
+    "category": "sculpture",
+    "availability": "available",
+    "price": 25000,
+    "year": 2026,
+    "dimensions": "38 × 22 × 24 cm",
+    "mediumEn": "Mixed media on acrylic cement",
+    "mediumRu": "Смешанная техника на акриловом цементе",
+    "descriptionEn": "Artonaut #14” — the fourteenth chapter in Mark Rox’s iconic Artonaut series. Painted in acrylics with UV-reactive pigments, it glows under blacklight and, like every piece in the series, comes alive through an AR experience.\n\nHere, the Artonaut’s suit explodes into a riot of neon graffiti — a full spectrum of colors, tags, and symbols layered across every surface. The once-functional armor becomes a moving street canvas, merging cosmic exploration with urban expression. It’s not just a traveler of outer space, but also a carrier of street culture into the infinite.\n\nBy fusing graffiti energy with futuristic vision, Artonaut #14 turns into a vibrant manifesto of freedom, color, and artistic rebellion.\n\n#Artonaut #MarkRox #UrbanArt #StreetArt #GraffitiArt #UVart #ARart #Futurism #ContemporaryArt",
+    "descriptionRu": "Artonaut #14” — the fourteenth chapter in Mark Rox’s iconic Artonaut series. Painted in acrylics with UV-reactive pigments, it glows under blacklight and, like every piece in the series, comes alive through an AR experience.\n\nHere, the Artonaut’s suit explodes into a riot of neon graffiti — a full spectrum of colors, tags, and symbols layered across every surface. The once-functional armor becomes a moving street canvas, merging cosmic exploration with urban expression. It’s not just a traveler of outer space, but also a carrier of street culture into the infinite.\n\nBy fusing graffiti energy with futuristic vision, Artonaut #14 turns into a vibrant manifesto of freedom, color, and artistic rebellion.\n\n#Artonaut #MarkRox #UrbanArt #StreetArt #GraffitiArt #UVart #ARart #Futurism #ContemporaryArt",
+    "images": [
+      "https://static.tildacdn.one/stor3338-6366-4930-b939-343134643565/76144382.jpg",
+      "https://static.tildacdn.one/stor3039-3863-4631-b335-656365323166/50712741.jpg",
+      "https://static.tildacdn.one/stor6430-3937-4735-b735-393536643132/73251763.jpg",
+      "https://static.tildacdn.one/stor3661-6461-4338-b537-393237303338/12122739.png"
+    ],
+    "sku": "TIL-L86ZRVBV",
+    "tags": [
+      "ARTonaut",
+      "Sculpture"
+    ],
+    "sourceUrl": "https://markrox.art/tproduct/556982424842--artonaut-14",
+    "featured": false,
+    "published": true,
+    "version": 1
+  },
+  {
+    "id": "kaleidoscope",
+    "title": "Kaleidoscope",
+    "category": "painting",
+    "availability": "available",
+    "price": 5000,
+    "year": 2026,
+    "dimensions": "150 × 100 cm",
+    "mediumEn": "Mixed media on canvas",
+    "mediumRu": "Смешанная техника на холсте",
+    "descriptionEn": "Mark Rox \nOil on canvas \nCreated in the aftermath of a personal rupture, Kaleidoscope explores the fragmentation of the inner world. The composition unfolds through intersecting forms that echo the logic of a kaleidoscope — where broken elements reorganize into new visual rhythms. \nContrasts of warm and cool tones reflect the tension between emotional intensity and detachment. Rather than remaining in collapse, the work suggests movement toward reconfiguration and balance. \nA meditation on rupture, perception, and transformation.",
+    "descriptionRu": "Mark Rox \nOil on canvas \nCreated in the aftermath of a personal rupture, Kaleidoscope explores the fragmentation of the inner world. The composition unfolds through intersecting forms that echo the logic of a kaleidoscope — where broken elements reorganize into new visual rhythms. \nContrasts of warm and cool tones reflect the tension between emotional intensity and detachment. Rather than remaining in collapse, the work suggests movement toward reconfiguration and balance. \nA meditation on rupture, perception, and transformation.",
+    "images": [
+      "https://static.tildacdn.one/stor6261-6266-4436-b461-363338393061/60048c23f48aa1f1cea87bd8f6b60d2c.jpg",
+      "https://static.tildacdn.one/stor3332-6534-4062-b264-663266656235/8fc822dfb7547c46f100cd97a5ab186c.png",
+      "https://static.tildacdn.one/stor3939-3633-4263-b938-643363613535/9f430cbde9af21d23b26f2d398fc97da.jpg",
+      "https://static.tildacdn.one/stor6133-3834-4263-a165-326530386565/c221e843dd68ccfadd30d3bb30371943.jpg"
+    ],
+    "sku": "TIL-7OBDHU2H",
+    "tags": [
+      "Painting",
+      "Pop Art",
+      "UV"
+    ],
+    "sourceUrl": "https://markrox.art/tproduct/818979466494-kaleidoscope",
+    "featured": false,
+    "published": true,
+    "version": 1
+  },
+  {
+    "id": "mermaid",
+    "title": "Mermaid",
+    "category": "painting",
+    "availability": "available",
+    "price": 6500,
+    "year": 2026,
+    "dimensions": "150 × 100 cm",
+    "mediumEn": "Mixed media on canvas",
+    "mediumRu": "Смешанная техника на холсте",
+    "descriptionEn": "Oil on canvas. Mark Rox, Castelldefels, Catalunya, 2024. \n\nIn this work, Mark Rox turns to the image of the mermaid as a symbol of the inner world — a threshold between reality and myth, serenity and unrest. The figure of the mythological woman, captured in a moment of sleep or meditation, becomes a metaphor for the artist’s emotional state during his time living on the Catalan coast. \n\nWhile residing in Castelldefels, Rox was in daily dialogue with the vastness of the sea — an experience reflected in the palette. Dominated by aquamarine, emerald, and muted ochre tones, the composition conveys a sense of depth and tranquility.",
+    "descriptionRu": "Oil on canvas. Mark Rox, Castelldefels, Catalunya, 2024. \n\nIn this work, Mark Rox turns to the image of the mermaid as a symbol of the inner world — a threshold between reality and myth, serenity and unrest. The figure of the mythological woman, captured in a moment of sleep or meditation, becomes a metaphor for the artist’s emotional state during his time living on the Catalan coast. \n\nWhile residing in Castelldefels, Rox was in daily dialogue with the vastness of the sea — an experience reflected in the palette. Dominated by aquamarine, emerald, and muted ochre tones, the composition conveys a sense of depth and tranquility.",
+    "images": [
+      "https://static.tildacdn.one/stor3330-3462-4764-a532-633963633562/aa3a3f79b2f57bd13fbef524471d9b81.jpg",
+      "https://static.tildacdn.one/stor3061-3135-4733-a236-643731323463/d804e2e57294be444734d4c3a13ece0d.png",
+      "https://static.tildacdn.one/stor3438-6165-4362-b034-396237643661/b1d36db772ef0f24913e8faaf9c40575.jpg",
+      "https://static.tildacdn.one/stor3334-3362-4239-b736-643534633231/b8996bca71ace34e4bc63cd0334c6846.jpg"
+    ],
+    "sku": "TIL-JBJVLZMH",
+    "tags": [
+      "Painting",
+      "Pop Art",
+      "UV"
+    ],
+    "sourceUrl": "https://markrox.art/tproduct/455504598184-mermaid",
+    "featured": false,
+    "published": true,
+    "version": 1
+  },
+  {
+    "id": "untitled-portal-fragment",
+    "title": "Untitled (Portal Fragment)",
+    "category": "painting",
+    "availability": "available",
+    "price": 8000,
+    "year": 2026,
+    "dimensions": "200 × 200 cm",
+    "mediumEn": "Mixed media on canvas",
+    "mediumRu": "Смешанная техника на холсте",
+    "descriptionEn": "Mark Rox, 2024 \nSpray paint, acrylic, graffiti technique on custom engineered material \nApprox. 200 × 200 cm \nThis large-scale street art piece by Mark Rox explores the illusion of depth through a meticulously constructed visual “portal” carved into a fractured architectural surface. Executed in a refined spray paint and acrylic graffiti technique, the work merges sharp geometric structure with fluid chromatic transitions, creating a hypnotic passage that appears to extend infinitely beyond the wall. \nProduced on a specially engineered material, this piece exists as a high-end street art sticker — a format that bridges the raw language of urban art with the flexibility of contemporary installation. It can be mounted directly onto walls using a dedicated adhesive system, allowing for both temporary and permanent placement without compromising visual integrity. \nBalancing precision and spontaneity, Mark Rox transforms a flat surface into a dimensional experience, inviting the viewer to step into a constructed reality where graffiti evolves beyond surface intervention into spatial illusion.",
+    "descriptionRu": "Mark Rox, 2024 \nSpray paint, acrylic, graffiti technique on custom engineered material \nApprox. 200 × 200 cm \nThis large-scale street art piece by Mark Rox explores the illusion of depth through a meticulously constructed visual “portal” carved into a fractured architectural surface. Executed in a refined spray paint and acrylic graffiti technique, the work merges sharp geometric structure with fluid chromatic transitions, creating a hypnotic passage that appears to extend infinitely beyond the wall. \nProduced on a specially engineered material, this piece exists as a high-end street art sticker — a format that bridges the raw language of urban art with the flexibility of contemporary installation. It can be mounted directly onto walls using a dedicated adhesive system, allowing for both temporary and permanent placement without compromising visual integrity. \nBalancing precision and spontaneity, Mark Rox transforms a flat surface into a dimensional experience, inviting the viewer to step into a constructed reality where graffiti evolves beyond surface intervention into spatial illusion.",
+    "images": [
+      "https://static.tildacdn.one/stor3566-6134-4739-b438-663336633931/c0308aa361d1f52ae5830d0b95bfe83c.jpg",
+      "https://static.tildacdn.one/stor3431-6265-4865-b063-616131326537/f467996051ab62c831e9f433c3d14090.jpg",
+      "https://static.tildacdn.one/stor6666-3835-4731-a639-313431303136/44c79900680de16b2e6c9f3b202d7394.jpg",
+      "https://static.tildacdn.one/stor3666-3035-4438-a262-613161616265/6df3e50a2d98430d159cd1758fc7a86f.jpg",
+      "https://static.tildacdn.one/stor6234-6631-4935-a564-316363366665/79042e8d4404eee9acf91b260f1c9917.jpg"
+    ],
+    "sku": "TIL-YLYFK45D",
+    "tags": [
+      "Painting",
+      "Pop Art",
+      "UV"
+    ],
+    "sourceUrl": "https://markrox.art/tproduct/217962003684-untitled-portal-fragment",
+    "featured": false,
+    "published": true,
+    "version": 1
+  },
+  {
+    "id": "magic-orange-forest",
+    "title": "Magic Orange Forest",
+    "category": "painting",
+    "availability": "available",
+    "price": 18000,
+    "year": 2026,
+    "dimensions": "150 × 100 cm",
+    "mediumEn": "Mixed media on canvas",
+    "mediumRu": "Смешанная техника на холсте",
+    "descriptionEn": "a portal into one of Mark Rox’s unseen universes, where fantasy and inner exploration merge into a single flowing landscape. \nCreated in a mixed technique of oil painting with the addition of UV-reactive acrylics, the artwork transforms under ultraviolet light, revealing hidden layers and glowing elements that awaken like a parallel reality 🌌🔊. What seems calm and dreamlike in daylight becomes alive, pulsating with energy and mystery. \nA surreal path of stairs leads the viewer deep into an otherworldly forest, where organic forms twist into architecture, and nature fuses with imagination. The dominant orange tones symbolize warmth, transformation, and a kind of inner fire — a guiding force for those who dare to move forward 🔥🚀. \nThis is not just a landscape, but a journey — a space where Artonauts, or the artist himself, wander through unknown dimensions, searching, creating, and discovering new meanings beyond the visible 🌠🧠. \nThe work reflects Mark Rox’s signature vision: blending street-art energy, fine art technique, and immersive experience into a living, evolving piece that exists both in physical and augmented realms. \n#MarkRox #MagicOrangeForest #ContemporaryArt #UVArt #AugmentedReality #FantasyArt #Surrealism #Artonaut #GlowArt #ModernArt",
+    "descriptionRu": "a portal into one of Mark Rox’s unseen universes, where fantasy and inner exploration merge into a single flowing landscape. \nCreated in a mixed technique of oil painting with the addition of UV-reactive acrylics, the artwork transforms under ultraviolet light, revealing hidden layers and glowing elements that awaken like a parallel reality 🌌🔊. What seems calm and dreamlike in daylight becomes alive, pulsating with energy and mystery. \nA surreal path of stairs leads the viewer deep into an otherworldly forest, where organic forms twist into architecture, and nature fuses with imagination. The dominant orange tones symbolize warmth, transformation, and a kind of inner fire — a guiding force for those who dare to move forward 🔥🚀. \nThis is not just a landscape, but a journey — a space where Artonauts, or the artist himself, wander through unknown dimensions, searching, creating, and discovering new meanings beyond the visible 🌠🧠. \nThe work reflects Mark Rox’s signature vision: blending street-art energy, fine art technique, and immersive experience into a living, evolving piece that exists both in physical and augmented realms. \n#MarkRox #MagicOrangeForest #ContemporaryArt #UVArt #AugmentedReality #FantasyArt #Surrealism #Artonaut #GlowArt #ModernArt",
+    "images": [
+      "https://static.tildacdn.one/stor3164-3834-4730-b862-613939333766/2173672cfbaccabf1d01a7e1d2835711.jpg",
+      "https://static.tildacdn.one/stor3137-3266-4638-b362-626436393436/364ba445f2f45388f524bb34feb680c4.jpg",
+      "https://static.tildacdn.one/stor3132-6436-4034-a265-646239643664/b01eaf853a522f72031027bf657c9d72.jpg",
+      "https://static.tildacdn.one/stor3362-6365-4435-b431-343133303835/705005c46da1d6014aba34be1f7c68b1.jpg",
+      "https://static.tildacdn.one/stor3937-6130-4137-b832-306238643037/7d2aa4eb08deb7673b8e26be25c8b359.jpg",
+      "https://static.tildacdn.one/stor6632-3430-4538-a432-353766333366/555eac4c43ab1e31beddfe4426cc1e5e.jpg",
+      "https://static.tildacdn.one/stor3834-6161-4935-b837-373233343666/47411f0a93a36d21b1a54265e2a18f5e.jpg",
+      "https://static.tildacdn.one/stor3264-6134-4562-a330-663361343033/e96691ad7c185ddb934ea6510cdf6ca0.jpg",
+      "https://static.tildacdn.one/stor6531-6265-4633-a461-336261653433/10b5ffd5b1e41c04985a9e388f3b80d3.jpg",
+      "https://static.tildacdn.one/stor3263-3534-4230-b938-393335626634/eef7002cfc4db102f85da7ffccf6a7a4.jpg"
+    ],
+    "sku": "TIL-E7BVNSUR",
+    "tags": [
+      "Painting",
+      "Pop Art",
+      "UV"
+    ],
+    "sourceUrl": "https://markrox.art/tproduct/287456617804-magic-orange-forest",
+    "featured": true,
+    "published": true,
+    "version": 1
+  },
+  {
+    "id": "avengers-private-edition",
+    "title": "Avengers — Private Edition",
+    "category": "painting",
+    "availability": "available",
+    "price": 25000,
+    "year": 2026,
+    "dimensions": "150 × 100 cm",
+    "mediumEn": "Mixed media on canvas",
+    "mediumRu": "Смешанная техника на холсте",
+    "descriptionEn": "by Mark Rox is a powerful large-scale work (2 meters wide), where the artist brings together five of his favorite Marvel superheroes into one unified, explosive composition. \nPainted using a refined combination of oil painting and airbrush techniques, the piece balances classical depth with hyper-realistic precision. Each character — from the raw force of Hulk to the technological brilliance of Iron Man — is rendered with cinematic intensity, as if frozen mid-action in a moment of collective impact. \nThe artwork extends beyond the canvas: through augmented reality, it comes alive, transforming a static scene into an immersive experience where motion, energy, and atmosphere continue beyond the painted surface. 📲✨ \nCreated exclusively for his private collection, this piece lives inside the artist’s studio in Barcelona — a daily reminder of inspiration, ambition, and childhood mythology reborn through contemporary art. \nNot exhibited publicly, it remains a rare and almost hidden work, available only to true collectors and devoted Marvel Avengers fans. 🔊 \n#MarkRox #AvengersArt #MarvelArt #ContemporaryArt #StreetArtInfluence #OilPainting #Airbrush #AugmentedReality #BarcelonaArt #PrivateCollection #ArtCollectors #SuperheroArt",
+    "descriptionRu": "by Mark Rox is a powerful large-scale work (2 meters wide), where the artist brings together five of his favorite Marvel superheroes into one unified, explosive composition. \nPainted using a refined combination of oil painting and airbrush techniques, the piece balances classical depth with hyper-realistic precision. Each character — from the raw force of Hulk to the technological brilliance of Iron Man — is rendered with cinematic intensity, as if frozen mid-action in a moment of collective impact. \nThe artwork extends beyond the canvas: through augmented reality, it comes alive, transforming a static scene into an immersive experience where motion, energy, and atmosphere continue beyond the painted surface. 📲✨ \nCreated exclusively for his private collection, this piece lives inside the artist’s studio in Barcelona — a daily reminder of inspiration, ambition, and childhood mythology reborn through contemporary art. \nNot exhibited publicly, it remains a rare and almost hidden work, available only to true collectors and devoted Marvel Avengers fans. 🔊 \n#MarkRox #AvengersArt #MarvelArt #ContemporaryArt #StreetArtInfluence #OilPainting #Airbrush #AugmentedReality #BarcelonaArt #PrivateCollection #ArtCollectors #SuperheroArt",
+    "images": [
+      "https://static.tildacdn.one/stor3134-3936-4933-a331-373362356466/c6ceec7f2907537f32b0581a4cd1f4f8.jpg",
+      "https://static.tildacdn.one/stor3030-3562-4537-b763-363739663230/a158393954396e7fbcddf3ca6f38e713.jpg",
+      "https://static.tildacdn.one/stor3362-3665-4638-b536-663338666631/1fecc808c79b4c397b47cc1c9779ce17.jpg",
+      "https://static.tildacdn.one/stor3935-3461-4166-b865-646634346635/b849d3c8b28668134428c0e4c9201650.jpg",
+      "https://static.tildacdn.one/stor6162-3839-4536-b531-383066373730/36fbf478c16e6c71da2a70c4a830f5d4.jpg",
+      "https://static.tildacdn.one/stor3463-6532-4231-a130-383532666335/da0725e15342cc8d6ae8f14d129307a5.jpg",
+      "https://static.tildacdn.one/stor6238-3634-4631-b239-366231663233/6ecfd22711d907bc61324a5f4fee5aa6.jpg"
+    ],
+    "sku": "TIL-466GM0MH",
+    "tags": [
+      "Painting",
+      "Pop Art",
+      "UV"
+    ],
+    "sourceUrl": "https://markrox.art/tproduct/348758231914-avengers-private-edition",
+    "featured": true,
+    "published": true,
+    "version": 1
+  },
+  {
+    "id": "gravity-doesn-t-exist",
+    "title": "Gravity Doesn’t Exist",
+    "category": "painting",
+    "availability": "available",
+    "price": 7500,
+    "year": 2026,
+    "dimensions": "150 × 100 cm",
+    "mediumEn": "Mixed media on canvas",
+    "mediumRu": "Смешанная техника на холсте",
+    "descriptionEn": "A powerful standalone work by Mark Rox, created in 2025 for the MOSS Foundation Skaters — a volunteer-driven initiative that builds permanent clean water systems for communities in Africa. \nExecuted in oil and UV-reactive acrylics across six skateboard decks, the piece transforms recycled skate surfaces into a unified visual narrative — merging fine art, street culture, and social impact into a single object. \nAt the center, a drifting astronaut collides with the language of skateboarding — not floating in space, but suspended between motion and meaning. The skateboard becomes a global symbol: youth, freedom, rebellion — and now, responsibility. \nThis work exists beyond the Artonaut series, stepping into reality — where art is no longer just expression, but action. \nThe project is part of the MOSS Skate Art Exhibition, where over 90 artists reimagined skateboard decks as artworks, all contributing to a collective mission: raising funds for clean water infrastructure in Africa. \nThe tension within the piece is subtle but powerful: \nwhile the figure floats in weightlessness, millions remain bound by the absence of something as fundamental as clean water. \n✨ Exhibited at Palo Alto Barcelona as part of the MOSS exhibition \n💧 Proceeds from the sale of this artwork contribute to building water wells in Africa \n📲 Learn more: mossfoundationskaters \n#MarkRox #MOSSFoundation #ArtForChange #SkateArt #ContemporaryArt #StreetArt #UrbanArt #Africa #WaterForLife #ArtWithPurpose",
+    "descriptionRu": "A powerful standalone work by Mark Rox, created in 2025 for the MOSS Foundation Skaters — a volunteer-driven initiative that builds permanent clean water systems for communities in Africa. \nExecuted in oil and UV-reactive acrylics across six skateboard decks, the piece transforms recycled skate surfaces into a unified visual narrative — merging fine art, street culture, and social impact into a single object. \nAt the center, a drifting astronaut collides with the language of skateboarding — not floating in space, but suspended between motion and meaning. The skateboard becomes a global symbol: youth, freedom, rebellion — and now, responsibility. \nThis work exists beyond the Artonaut series, stepping into reality — where art is no longer just expression, but action. \nThe project is part of the MOSS Skate Art Exhibition, where over 90 artists reimagined skateboard decks as artworks, all contributing to a collective mission: raising funds for clean water infrastructure in Africa. \nThe tension within the piece is subtle but powerful: \nwhile the figure floats in weightlessness, millions remain bound by the absence of something as fundamental as clean water. \n✨ Exhibited at Palo Alto Barcelona as part of the MOSS exhibition \n💧 Proceeds from the sale of this artwork contribute to building water wells in Africa \n📲 Learn more: mossfoundationskaters \n#MarkRox #MOSSFoundation #ArtForChange #SkateArt #ContemporaryArt #StreetArt #UrbanArt #Africa #WaterForLife #ArtWithPurpose",
+    "images": [
+      "https://static.tildacdn.one/stor6130-6434-4162-a634-363638313430/e5b750433bb58132a4fc9657362dd0a2.jpg",
+      "https://static.tildacdn.one/stor3665-6232-4764-a534-643165336637/a9ff78a5ca84f977eb567a47feecb4a2.jpg",
+      "https://static.tildacdn.one/stor6233-6131-4430-b831-666665623034/55122cc976c8840a746a26ee53c6f59b.jpg",
+      "https://static.tildacdn.one/stor6438-3937-4338-a336-363839396331/5affdce12621a03d24643cee1c6a6b4d.jpg",
+      "https://static.tildacdn.one/stor3663-3531-4465-b632-333839336434/bb0bbadc92eb7e66a0fc85e35c86469a.jpg",
+      "https://static.tildacdn.one/stor3137-3932-4530-b232-343739626563/243033f5f5479fe5e9d1d10b2aa916b8.jpg",
+      "https://static.tildacdn.one/stor6137-3866-4064-a333-653736356438/8fe39e6c90566c1324efef396da83299.jpg"
+    ],
+    "sku": "TIL-JJJS6M97",
+    "tags": [
+      "Painting",
+      "Pop Art",
+      "UV"
+    ],
+    "sourceUrl": "https://markrox.art/tproduct/783173197234-gravity-doesnt-exist",
+    "featured": false,
+    "published": true,
+    "version": 1
+  },
+  {
+    "id": "artonaut-12",
+    "title": "Artonaut #12",
+    "category": "sculpture",
+    "availability": "sold",
+    "price": null,
+    "year": 2026,
+    "dimensions": "130x97cm",
+    "mediumEn": "Mixed media on acrylic cement",
+    "mediumRu": "Смешанная техника на акриловом цементе",
+    "descriptionEn": "🌍 “Artonaut #12” — the twelfth work in Mark Rox’s Artonaut series, created in acrylic with UV-reactive pigments that come to life under blacklight, revealing hidden details and enhancing the visible ones. Like all pieces in the series, it can be brought to life through AR.\n\nIn reality, an astronaut is a tiny figure adrift in the vastness of space, with Earth appearing as a massive and dominant presence. In this piece, however, Mark Rox inverts that perspective: the planet becomes small and fragile, while the Artonaut is rendered monumental, almost sculptural. He sits as if resting after a long journey, watching the miniature Earth float in the void.\n\nThis shift in scale creates the sensation of peering into a world where the familiar laws of space and the roles we assign are reversed — a place where the artist plays with our perception of reality itself.\n\n#Artonaut #MarkRox #StreetArt #GraffitiArt #UVart #ARart #Futurism #ContemporaryArt\n\n130x97cm",
+    "descriptionRu": "🌍 “Artonaut #12” — the twelfth work in Mark Rox’s Artonaut series, created in acrylic with UV-reactive pigments that come to life under blacklight, revealing hidden details and enhancing the visible ones. Like all pieces in the series, it can be brought to life through AR.\n\nIn reality, an astronaut is a tiny figure adrift in the vastness of space, with Earth appearing as a massive and dominant presence. In this piece, however, Mark Rox inverts that perspective: the planet becomes small and fragile, while the Artonaut is rendered monumental, almost sculptural. He sits as if resting after a long journey, watching the miniature Earth float in the void.\n\nThis shift in scale creates the sensation of peering into a world where the familiar laws of space and the roles we assign are reversed — a place where the artist plays with our perception of reality itself.\n\n#Artonaut #MarkRox #StreetArt #GraffitiArt #UVart #ARart #Futurism #ContemporaryArt\n\n130x97cm",
+    "images": [
+      "https://static.tildacdn.one/stor6366-3030-4133-a263-393030363861/605b917988a8d6423bb10c7f42c77697.png",
+      "https://static.tildacdn.one/stor3461-6238-4435-a537-646135333232/16265575.jpg",
+      "https://static.tildacdn.one/stor3362-6266-4435-b636-373030303639/87980788.jpg",
+      "https://static.tildacdn.one/stor3338-3236-4636-b232-373363356132/63849478.png",
+      "https://static.tildacdn.one/stor6265-6334-4163-b466-316165363035/95585769.png"
+    ],
+    "sku": "TIL-N6EVYGUD",
+    "tags": [
+      "ARTonaut",
+      "Sculpture"
+    ],
+    "sourceUrl": "https://markrox.art/tproduct/384499752102--artonaut-12",
+    "featured": false,
+    "published": true,
+    "version": 1
+  },
+  {
+    "id": "graffiti-giraffe",
+    "title": "Graffiti Giraffe",
+    "category": "painting",
+    "availability": "sold",
+    "price": 9500,
+    "year": 2026,
+    "dimensions": "195 × 130 × 2 cm",
+    "mediumEn": "Mixed media on canvas",
+    "mediumRu": "Смешанная техника на холсте",
+    "descriptionEn": "Nature meets the visual rhythm of the city. The giraffe becomes a surface for graffiti; ultraviolet acrylic changes the perception of its layered colours. Archive piece.",
+    "descriptionRu": "Природа встречается с визуальным ритмом города. Фигура жирафа становится пространством для граффити, а ультрафиолетовый акрил меняет восприятие цветовых слоёв.",
+    "images": [
+      "https://www.artevistas.eu/wp-content/uploads/2026/01/Mark-Rox-Graffiti-Giraffe-scaled.jpg",
+      "https://www.artevistas.eu/wp-content/uploads/2026/01/Mark-Rox-Graffiti-Giraffe-UV-scaled.jpeg",
+      "https://www.artevistas.eu/wp-content/uploads/2026/01/Mark-Rox-Graffiti-Giraffe-web-scaled.jpg"
+    ],
+    "sku": "CUMROX3466",
+    "tags": [
+      "Painting",
+      "UV",
+      "AR"
+    ],
+    "sourceUrl": "https://www.artevistas.eu/product/mark-rox-graffiti-giraffe/",
+    "featured": false,
+    "published": true,
+    "version": 1
+  }
+]
