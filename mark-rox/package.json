@@ -1,0 +1,16 @@
+{
+  "name": "mark-rox-studio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server.mjs",
+    "admin:setup": "node --env-file-if-exists=.env scripts/admin-setup.mjs",
+    "assets:download": "node scripts/assets.mjs",
+    "preview:build": "node scripts/build.mjs",
+    "test": "node --test tests/*.test.mjs"
+  }
+}

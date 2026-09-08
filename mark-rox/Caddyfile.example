@@ -1,0 +1,11 @@
+# Set SITE_HOST and ADMIN_HOST in Caddy's environment (domain names, no scheme).
+# Example: SITE_HOST=your-domain.example ADMIN_HOST=adminpro.your-domain.example
+# Node should listen on 127.0.0.1:3000, inaccessible from the public internet.
+{$SITE_HOST}, {$ADMIN_HOST} {
+  encode zstd gzip
+  reverse_proxy 127.0.0.1:3000 {
+    header_up Host {host}
+    # Replace forwarded client address, do not accept untrusted client values.
+    header_up X-Forwarded-For {remote_host}
+  }
+}

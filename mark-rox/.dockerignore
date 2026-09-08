@@ -1,0 +1,9 @@
+.env
+.env.*
+!.env.example
+data
+node_modules
+*.log
+*.pid
+.git
+scripts/browser-qa.cjs
