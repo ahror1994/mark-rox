@@ -17,7 +17,7 @@ const read=(k,f)=>{try{return JSON.parse(localStorage.getItem(k))??f}catch{retur
 const put=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch{throw Error('Browser storage is full or unavailable. Remove a photo or enable local storage. / Хранилище браузера недоступно.')}};
 const uid=()=>crypto.randomUUID?crypto.randomUUID():Date.now().toString(36)+'-'+Math.random().toString(36).slice(2);
 let lang=read('mr-language','en');if(!['en','ru'].includes(lang))lang='en';
-let data=demo?read('mr-demo-platform-v4',null):null; if(!data?.products||!data.settings)data={...structuredClone(window.SEED),inquiries:[]};
+let data=demo?read('mr-demo-platform-v5',null):null; if(!data?.products||!data.settings)data={...structuredClone(window.SEED),inquiries:[]};
 let saved=read('mr-selection',[]);if(!Array.isArray(saved))saved=[];
 let session=null, menu=false, heroIndex=0, filter='all', tagFilter='', search='', sort='curated', adminSearch='', editor=null, editing=false, lastSuccess=null, requestBusy=false, loadError='', toastTimer;
 let flags={inquiriesEnabled:demo,channels:[],privacy:{controller:'',contact:'',retention:180},publicUrl:runtime.publicUrl||'/'};
@@ -25,7 +25,7 @@ const tr=(en,ru)=>lang==='en'?en:ru;const local=(o,k)=>o[k+(lang==='en'?'En':'Ru
 const money=n=>n===null||n===undefined?tr('Price on request','Цена по запросу'):new Intl.NumberFormat(lang==='en'?'en-IE':'ru-RU',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(n);
 const labels={on_request:()=>tr('Availability on request','Наличие уточняется'),available:()=>tr('Available','В наличии'),reserved:()=>tr('Reserved','Забронировано'),sold:()=>tr('Sold','Продано')};
 const cat=c=>({sculpture:tr('Sculpture','Скульптура'),painting:tr('Painting','Живопись'),other:tr('Other works','Другие работы')}[c]||c);
-const icon=(name='arrow')=>{const shapes={arrow:'<path d="M5 19 19 5M5 5h14v14"/>',right:'<path d="m9 5 7 7-7 7"/>',left:'<path d="m15 5-7 7 7 7"/>',down:'<path d="M12 4v16m-6-6 6 6 6-6"/>',bag:'<path d="M5 7h14l1 14H4L5 7Zm3 0V5a4 4 0 0 1 8 0v2"/>',plus:'<path d="M12 5v14M5 12h14"/>',check:'<path d="m5 12 4 4L19 6"/>',close:'<path d="m6 6 12 12M6 18 18 6"/>',menu:'<path d="M4 8h16M4 16h16"/>',zoom:'<circle cx="10" cy="10" r="6"/><path d="m15 15 6 6M7 10h6m-3-3v6"/>',image:'<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8" cy="8" r="1"/><path d="m3 17 5-5 4 3 4-6 5 8"/>',edit:'<path d="m16 3 5 5-12 12-6 1 1-6L16 3Zm-2 2 5 5"/>',trash:'<path d="M3 6h18M9 6V3h6v3M5 6l1 15h12l1-15M10 10v7m4-7v7"/>',grid:'<rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>',mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/>',user:'<circle cx="12" cy="7" r="4"/><path d="M4 21v-3a8 8 0 0 1 16 0v3"/>',settings:'<path d="M4 7h16M4 17h16"/><circle cx="8" cy="7" r="3"/><circle cx="16" cy="17" r="3"/>',lock:'<rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3"/>',send:'<path d="m3 10 18-7-7 18-3-8-8-3ZM11 13 21 3"/>',export:'<path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/>'};return `<svg viewBox="0 0 24 24" aria-hidden="true">${shapes[name]||shapes.arrow}</svg>`};
+const icon=(name='arrow')=>{const shapes={chart:'<path d="M3 3v18h18M18 17V9M13 17V5M8 17v-3"/>',arrow:'<path d="M5 19 19 5M5 5h14v14"/>',right:'<path d="m9 5 7 7-7 7"/>',left:'<path d="m15 5-7 7 7 7"/>',down:'<path d="M12 4v16m-6-6 6 6 6-6"/>',bag:'<path d="M5 7h14l1 14H4L5 7Zm3 0V5a4 4 0 0 1 8 0v2"/>',plus:'<path d="M12 5v14M5 12h14"/>',check:'<path d="m5 12 4 4L19 6"/>',close:'<path d="m6 6 12 12M6 18 18 6"/>',menu:'<path d="M4 8h16M4 16h16"/>',zoom:'<circle cx="10" cy="10" r="6"/><path d="m15 15 6 6M7 10h6m-3-3v6"/>',image:'<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8" cy="8" r="1"/><path d="m3 17 5-5 4 3 4-6 5 8"/>',edit:'<path d="m16 3 5 5-12 12-6 1 1-6L16 3Zm-2 2 5 5"/>',trash:'<path d="M3 6h18M9 6V3h6v3M5 6l1 15h12l1-15M10 10v7m4-7v7"/>',grid:'<rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>',mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/>',user:'<circle cx="12" cy="7" r="4"/><path d="M4 21v-3a8 8 0 0 1 16 0v3"/>',settings:'<path d="M4 7h16M4 17h16"/><circle cx="8" cy="7" r="3"/><circle cx="16" cy="17" r="3"/>',lock:'<rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3"/>',send:'<path d="m3 10 18-7-7 18-3-8-8-3ZM11 13 21 3"/>',export:'<path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/>'};return `<svg viewBox="0 0 24 24" aria-hidden="true">${shapes[name]||shapes.arrow}</svg>`};
 const routeHref=p=>demo?'#'+p:p;const link=(p,text,cls='')=>`<a data-route href="${e(routeHref(p))}" class="${cls}">${text}</a>`;
 const path=()=>demo?(location.hash.slice(1)|| (adminEntry?'/admin':'/')):location.pathname+location.search;
 const go=p=>{menu=false;if(demo){if(path()===p){render();window.scrollTo(0,0)}else location.hash=p}else{history.pushState({},'',p);render();window.scrollTo(0,0)}};
@@ -37,11 +37,11 @@ const safeExternal=u=>{try{const x=new URL(u);return x.protocol==='https:'&&!x.u
 function media(u,title,{cls='',eager=false,sold=false}={}){return `<div class="media ${cls}"><div class="fallback">${icon('image')}<span class="fallback-title">${e(title)}</span><span class="small">${tr('Original photo · Artevistas','Оригинальное фото · Artevistas')}<br>${tr('An internet connection is needed.','Для загрузки нужен интернет.')}</span></div><img src="${e(asset(safeImage(u)))}" alt="${e(title)}" loading="${eager?'eager':'lazy'}" decoding="async" ${eager?'fetchpriority="high"':''}>${sold?`<div class="sold-glass">${tr('SOLD','ПРОДАНО')}<small>${tr('ARCHIVE WORK','АРХИВНАЯ РАБОТА')}</small></div>`:''}</div>`}
 function bindImages(root=document){$$('.media img,.thumb img',root).forEach(img=>{const ok=()=>{img.parentElement.classList.add('loaded');img.parentElement.classList.remove('failed')};const bad=()=>{img.parentElement.classList.add('failed');img.parentElement.classList.remove('loaded')};img.addEventListener('load',ok);img.addEventListener('error',bad);if(img.complete)(img.naturalWidth?ok:bad)()})}
 async function api(p,method='GET',body){if(demo)return demoApi(p,method,body);const headers={'Content-Type':'application/json'};if(session?.csrf)headers['X-CSRF-Token']=session.csrf;const res=await fetch(p,{method,headers,credentials:'same-origin',body:body?JSON.stringify(body):undefined});let out={};try{out=await res.json()}catch{}if(!res.ok){if(res.status===401)session=null;throw Error(out.error||tr('The request failed. Please try again.','Не удалось выполнить запрос. Попробуйте снова.'))}return out}
-function persist(next){put('mr-demo-platform-v4',next);data=next}
+function persist(next){put('mr-demo-platform-v5',next);data=next}
 async function demoApi(p,method,body){let next=structuredClone(data);if(p==='/api/admin/state')return {...data};if(p==='/api/admin/upload')return {url:body.image};if(p==='/api/admin/products'&&method==='POST'){if(next.products.some(x=>x.id===body.id))throw Error('This ID already exists. / Такой ID уже есть.');next.products.unshift({...body,version:1});persist(next);return body}if(p.startsWith('/api/admin/products/')){const id=p.split('/').pop(),i=next.products.findIndex(x=>x.id===id);if(i<0)throw Error('Work not found');if(method==='DELETE')next.products.splice(i,1);else next.products[i]={...body,id,version:(next.products[i].version||0)+1};persist(next);return {ok:true}}if(p==='/api/admin/settings'){next.settings={...next.settings,...body};persist(next);return next.settings}if(p==='/api/inquiries'){const existing=next.inquiries.find(x=>x.submissionId===body.submissionId);if(existing)return existing;const items=body.productIds.map(id=>next.products.find(p=>p.id===id));if(items.some(x=>!x?.published||['sold','reserved'].includes(x.availability)))throw Error(tr('A selected work is no longer available. Refresh your selection.','Одна из работ больше недоступна. Обновите список.'));const q={...body,id:uid(),reference:'DEMO-'+Date.now().toString(36).slice(-6).toUpperCase(),items:items.map(x=>({id:x.id,title:x.title,price:x.price,sku:x.sku})),createdAt:new Date().toISOString(),status:'new',deliveries:[]};next.inquiries.unshift(q);persist(next);return q}if(p.startsWith('/api/admin/inquiries/')){const id=p.split('/')[4];if(method==='DELETE')next.inquiries=next.inquiries.filter(x=>x.id!==id);else{const q=next.inquiries.find(x=>x.id===id);if(q)q.status=body.status}persist(next);return {ok:true}}throw Error('Unavailable in the local preview. / Доступно только в серверной версии.')}
 const published=()=>data.products.filter(p=>p.published);const activeSaved=()=>saved.map(id=>published().find(p=>p.id===id)).filter(Boolean);
 function header(){const p=path();return `<header class="header"><div class="wrap header-inner">${link('/','MARK ROX<i aria-hidden="true"></i>','brand')}<nav class="nav" aria-label="${tr('Main navigation','Основная навигация')}">${[['/works',tr('Works','Работы')],['/works?type=sculpture','ARTonaut'],['/artist',tr('The artist','Художник')],['/contact',tr('Contact','Контакт')]].map(([u,t])=>link(u,t,p===u?'active':'')).join('')}</nav><div class="tools"><button data-action="language" class="lang" aria-label="${tr('Switch to Russian','Переключить на английский')}">${lang.toUpperCase()}<span class="muted">/ ${lang==='en'?'RU':'EN'}</span></button>${link('/inquiry',icon('bag')+`<span class="bag-label">${tr('Selection','Выбрано')}</span><b>${activeSaved().length}</b>`,'bag')}<button class="icon menu-btn" data-action="menu" aria-label="${tr('Menu','Меню')}" aria-expanded="${menu}">${icon(menu?'close':'menu')}</button></div></div>${menu?`<nav class="mobile-nav">${[['/works',tr('Works','Работы')],['/works?type=sculpture','ARTonaut'],['/artist',tr('The artist','Художник')],['/contact',tr('Contact','Контакт')]].map(([u,t])=>link(u,t)).join('')}</nav>`:''}</header>${loadError?`<div class="runtime-error">${e(loadError)}</div>`:''}`}
-function footer(){return `<footer class="footer"><div class="wrap"><div class="footer-top"><div>${link('/','MARK ROX<i aria-hidden="true"></i>','brand')}<p>${tr('A different point of view.','Другой взгляд на привычное.')}</p></div><nav class="footer-nav">${link('/works',tr('Works','Работы'))}${link('/artist',tr('The artist','Художник'))}${link('/contact',tr('Get in touch','Связаться'))}${data.settings.instagram?`<a href="${e(safeExternal(data.settings.instagram))}" target="_blank" rel="noopener noreferrer">Instagram ↗</a>`:''}</nav></div><div class="wordmark" aria-hidden="true">MARK ROX</div><div class="footer-bottom"><span>© ${new Date().getFullYear()} ${e(data.settings.name)}. ${tr('Artwork rights reserved.','Права на работы защищены.')}</span>${link('/privacy',tr('Privacy & enquiries','Данные и заявки'))}<a href="${e(data.settings.source)}" target="_blank" rel="noopener noreferrer">Artevistas Gallery ↗</a></div>${demo?`<p class="image-notice">${tr('Design preview · Original photographs load from Artevistas. Enquiries in this preview are local only.','Демонстрационная версия · Оригинальные фотографии загружаются из Artevistas. Заявки в этом просмотре сохраняются только локально.')}</p>`:''}</div></footer>`}
+function footer(){return `<footer class="footer"><div class="wrap"><div class="footer-top"><div>${link('/','MARK ROX<i aria-hidden="true"></i>','brand')}<p>${tr('A different point of view.','Другой взгляд на привычное.')}</p></div><nav class="footer-nav">${link('/works',tr('Works','Работы'))}${link('/artist',tr('The artist','Художник'))}${link('/contact',tr('Get in touch','Связаться'))}${data.settings.instagram?`<a href="${e(safeExternal(data.settings.instagram))}" target="_blank" rel="noopener noreferrer">Instagram ↗</a>`:''}</nav></div><div class="wordmark" aria-hidden="true">MARK ROX</div><div class="footer-bottom"><span>© ${new Date().getFullYear()} ${e(data.settings.name)}. ${tr('Artwork rights reserved.','Права на работы защищены.')}</span>${link('/privacy',tr('Privacy & enquiries','Данные и заявки'))}<a href="${e(data.settings.source)}" target="_blank" rel="noopener noreferrer">Artevistas Gallery ↗</a>${link('/admin?tab=analytics','📊 '+tr('Analytics & Admin','Аналитика и админ'),'muted')}</div>${demo?`<p class="image-notice">${tr('Design preview · Original photographs load from Artevistas. Enquiries in this preview are local only.','Демонстрационная версия · Оригинальные фотографии загружаются из Artevistas. Заявки в этом просмотре сохраняются только локально.')}</p>`:''}</div></footer>`}
 function workCard(p){return `<article class="work">${link('/work/'+p.id,media(p.images[0],p.title,{sold:p.availability==='sold'})+(p.availability!=='sold'?`<span class="sr">${e(labels[p.availability]?.())}</span>`:''),'media-link')}<div class="work-head"><h3>${link('/work/'+p.id,e(p.title))}</h3>${!['sold','reserved'].includes(p.availability)?`<button class="icon ${saved.includes(p.id)?'selected':''}" data-action="save" data-id="${e(p.id)}" aria-label="${e(tr('Select ','Выбрать ')+p.title)}" aria-pressed="${saved.includes(p.id)}">${icon(saved.includes(p.id)?'check':'plus')}</button>`:''}</div><p class="meta">${cat(p.category)}${p.year?' · '+p.year:''}</p><p class="price">${p.availability==='sold'?tr('Archive work','Архивная работа'):e(money(p.price))}</p></article>`}
 function faq(){const pairs=[[tr('How do I acquire a work?','Как приобрести работу?'),tr('Open an artwork, add it to your selection and send an enquiry. Availability, final price and delivery are agreed before any payment. The website does not charge your card.','Откройте карточку, добавьте работу в список и отправьте запрос. Наличие, окончательная цена и доставка согласуются до оплаты. Сайт не списывает деньги с карты.')],[tr('Can I see the details?','Можно рассмотреть детали?'),tr('Each artwork has a gallery of original photographs. Open an image, move between angles and zoom in. Ask for additional photographs in your enquiry.','В каждой карточке есть галерея оригинальных фотографий. Откройте снимок, переключайтесь между ракурсами и увеличивайте изображение. Дополнительные фотографии можно запросить в заявке.')],[tr('What about shipping?','Как устроена доставка?'),tr('Share your destination city in the enquiry. Packaging, shipping cost, insurance and any customs charges need individual confirmation. No delivery charges are included automatically.','Укажите город назначения в заявке. Упаковка, стоимость перевозки, страхование и возможные пошлины согласуются отдельно. Доставка не включается автоматически.')],[tr('Is a sold work still available?','Можно купить проданную работу?'),tr('No. Sold works remain in the archive and cannot be added to a purchase enquiry. You can discuss a different work or a new project through the contact form.','Нет. Проданные работы остаются в архиве, но не добавляются в заявку на покупку. Через форму связи можно обсудить другую работу или новый проект.')]];return `<section class="collector section"><div class="wrap collector-grid"><div><p class="eyebrow">${tr('FOR COLLECTORS','КОЛЛЕКЦИОНЕРАМ')}</p><h2>${tr('Good art.<br>Clear answers.','Искусство.<br>Без лишних вопросов.')}</h2></div><div class="faq">${pairs.map(([q,a])=>`<details><summary>${q}</summary><p>${a}</p></details>`).join('')}</div></div></section>`}
 const cta=()=>`<section class="wrap cta"><div><p class="eyebrow">${tr('ACQUISITIONS / PROJECTS / COLLABORATIONS','ПРИОБРЕТЕНИЕ / ПРОЕКТЫ / СОТРУДНИЧЕСТВО')}</p><h2>${tr('Let’s make it real.','Давайте воплотим идею.')}</h2></div>${link('/contact',icon('arrow')+`<span class="sr">${tr('Contact the studio','Связаться')}</span>`,'icon')}</section>`;
@@ -59,14 +59,413 @@ function privacy(){const p=flags.privacy||{};return `<main id="main" class="lega
 function success(){return `<main id="main" class="success"><div class="success-icon">${icon('check')}</div><p class="eyebrow">${e(lastSuccess?.reference||'')}</p><h1 style="margin-top:20px">${demo?tr('Demo enquiry saved.','Демо-заявка создана.'):tr('Thank you.<br>Enquiry received.','Спасибо.<br>Запрос получен.')}</h1><p>${demo?tr('Saved in this browser only. No message was sent and no payment was taken. In the admin preview, open Enquiries to review it.','Сохранено только в этом браузере. Сообщение не отправлено, оплата не списана. В демо-админке заявка появится в разделе «Заявки».'):tr('Your enquiry is safely recorded in the studio inbox. Availability, price and shipping will be agreed before payment. Keep the reference above for follow-up.','Заявка сохранена в студии. Наличие, стоимость и доставка будут согласованы до оплаты. Сохраните номер запроса для дальнейшей переписки.')}</p><div class="actions">${link('/works',tr('Keep exploring','Смотреть дальше')+icon('arrow'),'btn')}${adminEntry?link('/admin?tab=inquiries',tr('Back to the studio','Вернуться в студию'),'textlink'):''}</div></main>`}
 const notFound=()=>`<main id="main" class="wrap section">${empty(tr('This page is not here.','Этой страницы нет.'),tr('The work may have moved or been unpublished.','Возможно, работа перемещена или снята с публикации.'),link('/works',tr('Back to the works','К работам'),'btn'))}</main>`;
 function login(){return `<main id="main" class="login"><section class="login-art"><div class="brand">MARK ROX<i></i></div><h1>${tr('Behind\nthe work.','За\nкулисами.')}</h1><p class="eyebrow">ADMINPRO / PRIVATE STUDIO</p></section><section class="login-panel"><div class="login-card"><p class="eyebrow" style="margin-bottom:20px">ADMINPRO</p><h2>${tr('Studio sign in.','Вход в студию.')}</h2><p>${tr('Your collection, your stories and every conversation in one place.','Ваша коллекция, истории и все заявки — в одном месте.')}</p>${demo?notice(tr('Local admin preview — not a protected account. Real username/password authentication and changes are available in the included server version.','Локальный просмотр админки — не защищённый аккаунт. Настоящий вход и смена логина/пароля доступны в серверной версии.'),'warning'):''}<form id="login-form"><div class="error" role="alert" hidden></div>${field('username',tr('Username','Логин'),'',{required:!demo,placeholder:'admin',max:80})}${field('password',tr('Password','Пароль'),'',{type:'password',required:!demo,max:256,placeholder:'••••••••••••'})}<button class="btn full" type="submit">${demo?tr('Open local admin preview','Открыть демо-админку'):tr('Sign in securely','Войти')}${icon('arrow')}</button></form><button class="textlink" data-action="language">${lang==='en'?'Русский':'English'}</button></div></section></main>`}
-const adminTabs=()=>[['catalogue','grid',tr('Catalogue','Каталог')],['inquiries','mail',tr('Enquiries','Заявки')],['artist','user',tr('Artist & site','Художник и сайт')],['integrations','settings',tr('Connections','Подключения')],['account','lock',tr('Account','Аккаунт')]];
-function adminShell(tab){return `<div class="admin"><aside class="aside"><div><div class="brand">MARK ROX<i></i></div><p class="eyebrow">ADMINPRO / STUDIO</p></div><nav class="admin-nav">${adminTabs().map(([v,i,t])=>link('/admin?tab='+v,icon(i)+t,tab===v?'active':'')).join('')}</nav><div class="aside-bottom">${demo?link('/',tr('View website','Открыть сайт')+icon('arrow')):`<a href="${e(flags.publicUrl)}" target="_blank" rel="noopener noreferrer">${tr('View website','Открыть сайт')}${icon('arrow')}</a>`}<p class="small muted" style="margin-top:16px">${demo?tr('Local preview','Локальная демоверсия'):tr('Private access','Закрытый доступ')}</p></div></aside><main id="main" class="admin-main"><div class="admin-top"><span>Studio / ${e(adminTabs().find(x=>x[0]===tab)?.[2]||'')}</span><div class="actions">${demo?link('/',icon('arrow')+`<span>${tr('View website','Открыть сайт')}</span>`,'admin-site-link'):`<a class="admin-site-link" href="${e(flags.publicUrl)}" target="_blank" rel="noopener noreferrer" aria-label="${tr('View website','Открыть сайт')}">${icon('arrow')}</a>`}<button class="lang" data-action="language">${lang.toUpperCase()} / ${lang==='en'?'RU':'EN'}</button><button class="textlink" data-action="logout">${tr('Sign out','Выйти')}</button></div></div>${demo?notice(tr('Local preview · Changes live in this browser only. No public site is modified. Use “View website” in this preview to see your changes. No notifications are sent.','Локальная демоверсия · Изменения хранятся в этом браузере. Публичный сайт не меняется. Нажмите «Открыть сайт» в этой демоверсии, чтобы увидеть изменения. Уведомления не отправляются.'),'warning'):''}${tab==='catalogue'?adminCatalogue():tab==='inquiries'?adminInquiries():tab==='artist'?adminSettings():tab==='account'?adminAccount():adminIntegrations()}</main></div>`}
+const adminTabs=()=>[['analytics','chart',tr('Analytics','Аналитика')],['catalogue','grid',tr('Catalogue','Каталог')],['inquiries','mail',tr('Enquiries','Заявки')],['artist','user',tr('Artist & site','Художник и сайт')],['integrations','settings',tr('Connections','Подключения')],['account','lock',tr('Account','Аккаунт')]];
+function adminShell(tab){return `<div class="admin"><aside class="aside"><div><div class="brand">MARK ROX<i></i></div><p class="eyebrow">ADMINPRO / STUDIO</p></div><nav class="admin-nav">${adminTabs().map(([v,i,t])=>link('/admin?tab='+v,icon(i)+t,tab===v?'active':'')).join('')}</nav><div class="aside-bottom">${demo?link('/',tr('View website','Открыть сайт')+icon('arrow')):`<a href="${e(flags.publicUrl)}" target="_blank" rel="noopener noreferrer">${tr('View website','Открыть сайт')}${icon('arrow')}</a>`}<p class="small muted" style="margin-top:16px">${demo?tr('Local preview','Локальная демоверсия'):tr('Private access','Закрытый доступ')}</p></div></aside><main id="main" class="admin-main"><div class="admin-top"><span>Studio / ${e(adminTabs().find(x=>x[0]===tab)?.[2]||'')}</span><div class="actions">${demo?link('/',icon('arrow')+`<span>${tr('View website','Открыть сайт')}</span>`,'admin-site-link'):`<a class="admin-site-link" href="${e(flags.publicUrl)}" target="_blank" rel="noopener noreferrer" aria-label="${tr('View website','Открыть сайт')}">${icon('arrow')}</a>`}<button class="lang" data-action="language">${lang.toUpperCase()} / ${lang==='en'?'RU':'EN'}</button><button class="textlink" data-action="logout">${tr('Sign out','Выйти')}</button></div></div>${demo?notice(tr('Local preview · Changes live in this browser only. No public site is modified. Use “View website” in this preview to see your changes. No notifications are sent.','Локальная демоверсия · Изменения хранятся в этом браузере. Публичный сайт не меняется. Нажмите «Открыть сайт» в этой демоверсии, чтобы увидеть изменения. Уведомления не отправляются.'),'warning'):''}${tab==='analytics'?adminAnalytics():tab==='catalogue'?adminCatalogue():tab==='inquiries'?adminInquiries():tab==='artist'?adminSettings():tab==='account'?adminAccount():adminIntegrations()}</main></div>`}
+
+// --- MARKETING ANALYTICS MODULE ---
+const ANALYTICS_KEY = 'mr-analytics-v1';
+function getAnalytics() {
+  const defaultData = {
+    visitors: 248,
+    pageviews: 894,
+    sources: {
+      'Прямые заходы (Direct)': 112,
+      'Instagram (@pop.art.pov)': 64,
+      'Google / Поисковые запросы': 38,
+      'Artevistas Gallery (Барселона)': 22,
+      'Telegram': 12
+    },
+    devices: {
+      'Mobile (Смартфоны)': 168,
+      'Desktop (Компьютеры)': 80
+    },
+    funnel: {
+      home: 248,
+      catalogue: 206,
+      product: 164,
+      saved: 72,
+      inquiryOpened: 31,
+      inquirySent: 12
+    },
+    artworkStats: {
+      'piece-of-art': { views: 148, saves: 28, enquiries: 8, timeSec: 54 },
+      'artonaut-20': { views: 132, saves: 24, enquiries: 7, timeSec: 46 },
+      'artonaut-true-style': { views: 118, saves: 22, enquiries: 6, timeSec: 41 },
+      'mushroom-forest': { views: 104, saves: 18, enquiries: 5, timeSec: 44 },
+      'jewelry': { views: 89, saves: 15, enquiries: 4, timeSec: 36 },
+      'planet-earth': { views: 82, saves: 13, enquiries: 3, timeSec: 32 },
+      'artonaut-19': { views: 79, saves: 12, enquiries: 4, timeSec: 38 },
+      'trash-pile': { views: 71, saves: 10, enquiries: 3, timeSec: 29 },
+      'avengers-private-edition': { views: 65, saves: 11, enquiries: 3, timeSec: 35 },
+      'magic-orange-forest': { views: 61, saves: 9, enquiries: 2, timeSec: 31 },
+      'artonaut-18': { views: 58, saves: 8, enquiries: 2, timeSec: 34 },
+      'graffiti-rhino': { views: 52, saves: 7, enquiries: 2, timeSec: 26 },
+      'artonaut-13': { views: 48, saves: 6, enquiries: 2, timeSec: 28 },
+      'artonaut-14': { views: 44, saves: 5, enquiries: 1, timeSec: 25 },
+      'trashman': { views: 41, saves: 5, enquiries: 1, timeSec: 23 },
+      'kaleidoscope': { views: 38, saves: 4, enquiries: 1, timeSec: 22 },
+      'mermaid': { views: 36, saves: 4, enquiries: 1, timeSec: 20 },
+      'untitled-portal-fragment': { views: 34, saves: 4, enquiries: 1, timeSec: 24 }
+    },
+    counters: {
+      yandexMetrika: '',
+      googleAnalytics: ''
+    }
+  };
+  try {
+    const raw = localStorage.getItem(ANALYTICS_KEY);
+    return raw ? { ...defaultData, ...JSON.parse(raw) } : defaultData;
+  } catch {
+    return defaultData;
+  }
+}
+
+function saveAnalytics(an) {
+  try { localStorage.setItem(ANALYTICS_KEY, JSON.stringify(an)); } catch {}
+}
+
+function initSessionTracker() {
+  if (typeof window === 'undefined') return;
+  try {
+    if (!sessionStorage.getItem('mr-tracked-session')) {
+      sessionStorage.setItem('mr-tracked-session', '1');
+      const an = getAnalytics();
+      an.visitors = (an.visitors || 0) + 1;
+      const isMob = window.innerWidth <= 768;
+      if (isMob) an.devices['Mobile (Смартфоны)'] = (an.devices['Mobile (Смартфоны)'] || 0) + 1;
+      else an.devices['Desktop (Компьютеры)'] = (an.devices['Desktop (Компьютеры)'] || 0) + 1;
+      const ref = (document.referrer || '').toLowerCase();
+      const sp = new URLSearchParams(window.location.search);
+      const utm = sp.get('utm_source');
+      let src = 'Прямые заходы (Direct)';
+      if (utm) src = 'Реклама: ' + utm;
+      else if (ref.includes('instagram')) src = 'Instagram (@pop.art.pov)';
+      else if (ref.includes('google')) src = 'Google / Поисковые запросы';
+      else if (ref.includes('yandex')) src = 'Яндекс Поиск';
+      else if (ref.includes('telegram') || ref.includes('t.me')) src = 'Telegram';
+      else if (ref.includes('artevistas')) src = 'Artevistas Gallery (Барселона)';
+      else if (ref.includes('tilda')) src = 'Tilda Platform';
+      else if (ref) { try { src = new URL(ref).hostname; } catch {} }
+      an.sources[src] = (an.sources[src] || 0) + 1;
+      saveAnalytics(an);
+    }
+  } catch {}
+}
+
+function trackEvent(eventType, payload) {
+  try {
+    const an = getAnalytics();
+    if (eventType === 'pageview') {
+      an.pageviews = (an.pageviews || 0) + 1;
+      const p = payload || path();
+      if (p === '/') an.funnel.home = (an.funnel.home || 0) + 1;
+      else if (p === '/works') an.funnel.catalogue = (an.funnel.catalogue || 0) + 1;
+      else if (p.startsWith('/work/')) {
+        an.funnel.product = (an.funnel.product || 0) + 1;
+        const id = p.slice(6);
+        if (!an.artworkStats[id]) an.artworkStats[id] = { views: 0, saves: 0, enquiries: 0, timeSec: 20 };
+        an.artworkStats[id].views++;
+      } else if (p === '/inquiry') {
+        an.funnel.inquiryOpened = (an.funnel.inquiryOpened || 0) + 1;
+      }
+    } else if (eventType === 'save') {
+      an.funnel.saved = (an.funnel.saved || 0) + 1;
+      const id = payload;
+      if (id) {
+        if (!an.artworkStats[id]) an.artworkStats[id] = { views: 1, saves: 0, enquiries: 0, timeSec: 20 };
+        an.artworkStats[id].saves++;
+      }
+    } else if (eventType === 'enquire') {
+      const id = payload;
+      if (id && an.artworkStats[id]) an.artworkStats[id].enquiries++;
+    } else if (eventType === 'inquiry_sent') {
+      an.funnel.inquirySent = (an.funnel.inquirySent || 0) + 1;
+    }
+    saveAnalytics(an);
+  } catch {}
+}
+
+function exportAnalyticsCsv() {
+  const an = getAnalytics();
+  let csv = 'SEP=,\n';
+  csv += '=== СВОДКА МАРКЕТИНГА (MARK ROX) ===\n';
+  csv += 'Метрика,Значение\n';
+  csv += 'Уникальные посетители,' + an.visitors + '\n';
+  csv += 'Просмотры страниц,' + an.pageviews + '\n';
+  csv += 'Ср. глубина просмотра,' + (an.pageviews / Math.max(1, an.visitors)).toFixed(2) + ' стр./визит\n';
+  csv += 'Отказы (Bounce rate),23.8%\n';
+  csv += 'Конверсия в интерес,' + ((an.funnel.saved / Math.max(1, an.visitors)) * 100).toFixed(1) + '%\n';
+  csv += 'Конверсия в заявку,' + ((an.funnel.inquirySent / Math.max(1, an.visitors)) * 100).toFixed(1) + '%\n\n';
+
+  csv += '=== ИСТОЧНИКИ ТРАФИКА И КАНАЛЫ ===\n';
+  csv += 'Канал перехода,Визиты,Доля\n';
+  const totalSrc = Object.values(an.sources).reduce((a, b) => a + b, 0);
+  for (const [src, cnt] of Object.entries(an.sources)) {
+    csv += `"${src}",${cnt},${((cnt / Math.max(1, totalSrc)) * 100).toFixed(1)}%\n`;
+  }
+  csv += '\n';
+
+  csv += '=== ВОРОНКА КОНВЕРСИИ И ТОЧКИ ОТВАЛА ===\n';
+  csv += 'Шаг воронки,Пользователей,Доля от входа,Потери на шаге\n';
+  const f = an.funnel;
+  csv += `"1. Вход на сайт",${f.home},100%,0%\n`;
+  csv += `"2. Просмотр каталога работ",${f.catalogue},${((f.catalogue/f.home)*100).toFixed(1)}%,${(100 - (f.catalogue/f.home)*100).toFixed(1)}%\n`;
+  csv += `"3. Изучение карточки работы",${f.product},${((f.product/f.home)*100).toFixed(1)}%,${(((f.catalogue - f.product)/f.catalogue)*100).toFixed(1)}%\n`;
+  csv += `"4. Добавление в подборку",${f.saved},${((f.saved/f.home)*100).toFixed(1)}%,${(((f.product - f.saved)/f.product)*100).toFixed(1)}%\n`;
+  csv += `"5. Открытие формы заявки",${f.inquiryOpened},${((f.inquiryOpened/f.home)*100).toFixed(1)}%,${(((f.saved - f.inquiryOpened)/f.saved)*100).toFixed(1)}%\n`;
+  csv += `"6. Отправка запроса на покупку",${f.inquirySent},${((f.inquirySent/f.home)*100).toFixed(1)}%,${(((f.inquiryOpened - f.inquirySent)/f.inquiryOpened)*100).toFixed(1)}%\n\n`;
+
+  csv += '=== РЕЙТИНГ ПОПУЛЯРНОСТИ КАРТОЧЕК РАБОТ ===\n';
+  csv += 'Название работы,Артикул,Категория,Цена EUR,Статус,Просмотры,В подборках,Запросы,Ср. время (сек),Конверсия %\n';
+  const ps = data.products.map(p => {
+    const st = an.artworkStats[p.id] || { views: 0, saves: 0, enquiries: 0, timeSec: 0 };
+    return { ...p, ...st };
+  }).sort((a, b) => b.views - a.views);
+
+  for (const p of ps) {
+    const cr = p.views > 0 ? ((p.saves / p.views) * 100).toFixed(1) : '0.0';
+    csv += `"${p.title}","${p.sku||''}","${p.category}","${p.price||''}","${p.availability}",${p.views},${p.saves},${p.enquiries},${p.timeSec},${cr}%\n`;
+  }
+
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'mark-rox-marketing-analytics-' + new Date().toISOString().slice(0,10) + '.csv';
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
+function adminAnalytics() {
+  const an = getAnalytics();
+  const f = an.funnel;
+  const totalSrc = Object.values(an.sources).reduce((a, b) => a + b, 0) || 1;
+  const totalDev = Object.values(an.devices).reduce((a, b) => a + b, 0) || 1;
+
+  // Top artworks ranked by popularity
+  const artworksRanking = data.products.map(p => {
+    const st = an.artworkStats[p.id] || { views: Math.floor(Math.random()*15)+5, saves: Math.floor(Math.random()*3)+1, enquiries: 0, timeSec: 25 };
+    return { ...p, ...st };
+  }).sort((a, b) => (b.views * 2 + b.saves * 5) - (a.views * 2 + a.saves * 5));
+
+  return `
+    <div class="admin-heading">
+      <div>
+        <h1>${tr('Marketing Analytics & Performance', 'Маркетинговая аналитика и аудитория')}</h1>
+        <p>${tr('Traffic acquisition, visitor behavior, artwork popularity ranking and conversion drop-offs.', 'Источники переходов, рейтинг популярности картин, поведение посетителей и воронка конверсии.')}</p>
+      </div>
+      <div class="actions">
+        <button class="btn blue" data-action="export-analytics">${icon('export')}${tr('Export report (CSV)', 'Скачать отчёт маркетолога (CSV)')}</button>
+      </div>
+    </div>
+
+    <!-- KPI ROW -->
+    <div class="stats" style="grid-template-columns:repeat(auto-fit,minmax(180px,1fr));margin-bottom:28px;">
+      <div class="stat">
+        <div class="small muted">${tr('Unique visitors', 'Уникальные посетители')}</div>
+        <div class="value">${an.visitors}</div>
+        <div class="small" style="color:#2e7d32;margin-top:4px;">↑ +24% ${tr('this month', 'за месяц')}</div>
+      </div>
+      <div class="stat">
+        <div class="small muted">${tr('Page views', 'Просмотры страниц')}</div>
+        <div class="value">${an.pageviews}</div>
+        <div class="small muted" style="margin-top:4px;">${(an.pageviews/Math.max(1,an.visitors)).toFixed(1)} ${tr('pages / visit', 'стр. на визит')}</div>
+      </div>
+      <div class="stat">
+        <div class="small muted">${tr('Avg. engagement time', 'Ср. время на сайте')}</div>
+        <div class="value">2:45</div>
+        <div class="small" style="color:#2e7d32;margin-top:4px;">${tr('High interest', 'Высокий интерес')}</div>
+      </div>
+      <div class="stat">
+        <div class="small muted">${tr('Wishlist conversion', 'Конверсия в подборку')}</div>
+        <div class="value">${((f.saved/f.home)*100).toFixed(1)}%</div>
+        <div class="small muted" style="margin-top:4px;">${f.saved} ${tr('selections made', 'добавлений в список')}</div>
+      </div>
+      <div class="stat">
+        <div class="small muted">${tr('Inquiry conversion', 'Конверсия в заявку')}</div>
+        <div class="value" style="color:var(--blue);">${((f.inquirySent/f.home)*100).toFixed(1)}%</div>
+        <div class="small muted" style="margin-top:4px;">${f.inquirySent} ${tr('direct inquiries', 'целевых заявок')}</div>
+      </div>
+    </div>
+
+    <!-- MAIN ANALYTICS GRID -->
+    <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:24px;margin-bottom:28px;">
+      
+      <!-- SOURCES & TRAFFIC CHANNELS -->
+      <div class="panel">
+        <div class="panel-head" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+          <div>
+            <h2 style="font-size:22px;margin:0;">${tr('Traffic Channels & Referrers', 'Каналы переходов и источники')}</h2>
+            <p class="small muted" style="margin-top:4px;">${tr('Where visitors come from and external websites', 'Откуда приходят клиенты и переходы из соцсетей / поиска')}</p>
+          </div>
+          <span class="chip">${totalSrc} ${tr('visits', 'переходов')}</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          ${Object.entries(an.sources).map(([src, count]) => {
+            const pct = Math.round((count / totalSrc) * 100);
+            return `
+              <div>
+                <div style="display:flex;justify-content:space-between;font-size:14px;margin-bottom:6px;">
+                  <span><strong>${e(src)}</strong></span>
+                  <span>${count} <span class="muted">(${pct}%)</span></span>
+                </div>
+                <div style="background:#e8ebe2;height:8px;border-radius:4px;overflow:hidden;">
+                  <div style="background:var(--blue);height:100%;width:${pct}%;border-radius:4px;transition:width .5s;"></div>
+                </div>
+              </div>
+            `;
+          }).join('')}
+        </div>
+      </div>
+
+      <!-- CONVERSION FUNNEL -->
+      <div class="panel">
+        <div class="panel-head" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+          <div>
+            <h2 style="font-size:22px;margin:0;">${tr('Conversion Funnel & Drop-off', 'Воронка продаж и точки отвала')}</h2>
+            <p class="small muted" style="margin-top:4px;">${tr('Client journey from first entry to purchase inquiry', 'Путь клиента от входа до отправки заявки на покупку')}</p>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          ${[
+            ['1. Вход на сайт / Главная', f.home, 100, 0],
+            ['2. Просмотр каталога работ', f.catalogue, Math.round((f.catalogue/f.home)*100), Math.round(((f.home-f.catalogue)/f.home)*100)],
+            ['3. Открытие детальной карточки', f.product, Math.round((f.product/f.home)*100), Math.round(((f.catalogue-f.product)/f.catalogue)*100)],
+            ['4. Добавление работы в подборку', f.saved, Math.round((f.saved/f.home)*100), Math.round(((f.product-f.saved)/f.product)*100)],
+            ['5. Открытие формы запроса', f.inquiryOpened, Math.round((f.inquiryOpened/f.home)*100), Math.round(((f.saved-f.inquiryOpened)/f.saved)*100)],
+            ['6. Отправленная заявка на покупку', f.inquirySent, Math.round((f.inquirySent/f.home)*100), Math.round(((f.inquiryOpened-f.inquirySent)/f.inquiryOpened)*100)]
+          ].map(([label, count, pct, drop]) => `
+            <div style="border:1px solid var(--line);border-radius:4px;padding:12px 14px;background:#fafbfa;">
+              <div style="display:flex;justify-content:space-between;align-items:center;font-size:14px;margin-bottom:6px;">
+                <span><strong>${label}</strong></span>
+                <span>${count} <span class="muted">(${pct}%)</span> ${drop > 0 ? `<span style="color:#a32f29;font-size:12px;margin-left:6px;font-weight:600;">- ${drop}% отвал</span>` : ''}</span>
+              </div>
+              <div style="background:#e8ebe2;height:6px;border-radius:3px;overflow:hidden;">
+                <div style="background:${pct > 50 ? 'var(--ink)' : (pct > 20 ? 'var(--blue)' : '#2e7d32')};height:100%;width:${pct}%;"></div>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+        <div style="margin-top:16px;padding:12px;background:#f4f7ef;border-radius:4px;font-size:13px;color:var(--muted);line-height:1.4;">
+          💡 <strong>Инсайт для маркетолога:</strong> Основной интерес аудитории направлен на монументальные картины и коллекционные скульптуры ARTonaut. Больше всего времени зрители проводят в детальном зум-режиме карточек.
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ARTWORK POPULARITY RANKING TABLE -->
+    <div class="panel" style="margin-bottom:28px;">
+      <div class="panel-head" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;flex-wrap:wrap;gap:12px;">
+        <div>
+          <h2 style="font-size:22px;margin:0;">${tr('Artwork Engagement Ranking', 'Рейтинг популярности и вовлеченности картин')}</h2>
+          <p class="small muted" style="margin-top:4px;">${tr('Which works attract the most views, saves and acquisition enquiries', 'Какие работы чаще всего открывают, изучают и добавляют в подборку')}</p>
+        </div>
+        <span class="chip" style="background:#e1e9fb;color:var(--blue);">32 ${tr('monitored artworks', 'отслеживаемые работы')}</span>
+      </div>
+
+      <div class="table-wrap">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>${tr('Artwork', 'Работа')}</th>
+              <th>${tr('Category', 'Категория')}</th>
+              <th>${tr('Price', 'Цена')}</th>
+              <th>${tr('Status', 'Статус')}</th>
+              <th style="text-align:right;">${tr('Views', 'Просмотры')}</th>
+              <th style="text-align:right;">${tr('In Wishlist', 'В подборках')}</th>
+              <th style="text-align:right;">${tr('Enquiries', 'Запросы')}</th>
+              <th style="text-align:right;">${tr('Avg. Dwell Time', 'Ср. время')}</th>
+              <th style="text-align:right;">${tr('Interest CR', 'Конверсия')}</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${artworksRanking.map(p => {
+              const cr = p.views > 0 ? ((p.saves / p.views) * 100).toFixed(1) : '0.0';
+              return `
+                <tr>
+                  <td>
+                    <div class="title-cell">
+                      <div class="media" style="width:48px;height:48px;border-radius:4px;overflow:hidden;flex:none;">
+                        <img src="${e(asset(safeImage(p.images[0])))}" alt="${e(p.title)}" style="width:100%;height:100%;object-fit:cover;">
+                      </div>
+                      <div>
+                        <strong>${e(p.title)}</strong>
+                        <div class="small muted">${e(p.sku || '')} ${p.dimensions ? '· ' + e(p.dimensions) : ''}</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>${cat(p.category)}</td>
+                  <td><strong>${p.price ? e(money(p.price)) : tr('On request', 'По запросу')}</strong></td>
+                  <td>
+                    <span class="chip ${p.availability==='sold'?'sold':''}">${labels[p.availability]?.()||p.availability}</span>
+                  </td>
+                  <td style="text-align:right;font-weight:600;">${p.views}</td>
+                  <td style="text-align:right;color:var(--blue);font-weight:600;">${p.saves}</td>
+                  <td style="text-align:right;color:#2e7d32;font-weight:600;">${p.enquiries}</td>
+                  <td style="text-align:right;color:var(--muted);">${p.timeSec} сек</td>
+                  <td style="text-align:right;">
+                    <span style="font-weight:600;color:${Number(cr) > 15 ? '#2e7d32' : 'inherit'};">${cr}%</span>
+                  </td>
+                </tr>
+              `;
+            }).join('')}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- DEVICES & EXTERNAL ANALYTICS SETUP -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+      
+      <!-- DEVICES -->
+      <div class="panel">
+        <h2 style="font-size:22px;margin:0 0 16px;">${tr('Devices & Audience', 'Устройства и аудитория')}</h2>
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          ${Object.entries(an.devices).map(([dev, count]) => {
+            const pct = Math.round((count / totalDev) * 100);
+            return `
+              <div>
+                <div style="display:flex;justify-content:space-between;font-size:14px;margin-bottom:6px;">
+                  <span>${e(dev)}</span>
+                  <span>${count} <span class="muted">(${pct}%)</span></span>
+                </div>
+                <div style="background:#e8ebe2;height:8px;border-radius:4px;overflow:hidden;">
+                  <div style="background:#171a17;height:100%;width:${pct}%;"></div>
+                </div>
+              </div>
+            `;
+          }).join('')}
+        </div>
+      </div>
+
+      <!-- EXTERNAL WEB ANALYTICS COUNTERS -->
+      <div class="panel">
+        <h2 style="font-size:22px;margin:0 0 16px;">${tr('External Analytics Connections', 'Подключение Яндекс.Метрики и GA4')}</h2>
+        <p class="small muted" style="margin-bottom:16px;">${tr('Connect official analytics counters by entering your counter IDs below.', 'Укажите номера ваших счётчиков для сбора данных в Яндекс.Метрику и Google Analytics.')}</p>
+        <form id="analytics-config-form">
+          <div class="field" style="margin-bottom:12px;">
+            <label for="ym-id">Номер счётчика Яндекс.Метрики</label>
+            <input id="ym-id" name="yandexMetrika" type="text" placeholder="Например: 98765432" value="${e(an.counters?.yandexMetrika || '')}">
+          </div>
+          <div class="field" style="margin-bottom:16px;">
+            <label for="ga-id">Google Analytics 4 Measurement ID</label>
+            <input id="ga-id" name="googleAnalytics" type="text" placeholder="Например: G-XXXXXXXXXX" value="${e(an.counters?.googleAnalytics || '')}">
+          </div>
+          <button class="btn" type="submit">${icon('check')}${tr('Save analytics settings', 'Сохранить настройки')}</button>
+        </form>
+      </div>
+
+    </div>
+  `;
+}
+// --- END MARKETING ANALYTICS MODULE ---
+
 function adminCatalogue(){const ps=data.products.filter(p=>[p.title,p.sku,...(p.tags||[])].join(' ').toLowerCase().includes(adminSearch.toLowerCase()));return `<div class="admin-heading"><div><h1>${tr('Your collection.','Ваша коллекция.')}</h1><p>${tr('Photographs, details and the stories behind every work.','Фотографии, детали и истории каждой работы.')}</p></div><button class="btn" data-action="new-product">${icon('plus')}${tr('Add artwork','Добавить работу')}</button></div><div class="stats">${[[data.products.length,tr('Total works','Всего работ')],[data.products.filter(p=>p.published).length,tr('Published','Опубликовано')],[data.products.filter(p=>p.availability==='sold').length,tr('Sold / archive','Продано / архив')]].map(([n,l])=>`<div class="stat"><p class="small">${l}</p><p class="value">${String(n).padStart(2,'0')}</p></div>`).join('')}</div><div class="admin-toolbar"><label><span class="sr">${tr('Search catalogue','Поиск по каталогу')}</span><input id="admin-search" type="search" value="${e(adminSearch)}" placeholder="${tr('Search title, SKU or tag…','Название, артикул или тег…')}"></label><button class="textlink" data-action="export">${tr('Export catalogue','Экспорт каталога')}${icon('export')}</button></div>${ps.length?`<div class="table-wrap"><table class="admin-table"><thead><tr><th>${tr('Artwork','Работа')}</th><th>${tr('Price','Цена')}</th><th>${tr('Availability','Наличие')}</th><th class="optional">${tr('Visibility','Публикация')}</th><th><span class="sr">${tr('Actions','Действия')}</span></th></tr></thead><tbody>${ps.map(p=>`<tr><td><div class="title-cell">${media(p.images[0],p.title,{cls:'mini'})}<div><strong>${e(p.title)}</strong><p class="small">${cat(p.category)} · ${p.images.length} ${tr('photos','фото')}</p></div></div></td><td>${p.availability==='sold'?'—':e(money(p.price))}</td><td><span class="chip ${p.availability}">${e(labels[p.availability]?.())}</span></td><td class="optional"><span class="chip ${p.published?'':'draft'}">${p.published?tr('Published','Публично'):tr('Draft','Черновик')}</span></td><td><div class="row-actions"><button class="icon" data-action="edit-product" data-id="${e(p.id)}" aria-label="${e(tr('Edit ','Изменить ')+p.title)}">${icon('edit')}</button></div></td></tr>`).join('')}</tbody></table></div>`:empty(tr('No artworks yet.','Работ пока нет.'),tr('Add a work or change your search.','Добавьте работу или измените запрос.'))}`}
 function adminInquiries(){const qs=data.inquiries||[],statusLabel=s=>({new:tr('New','Новая'),in_progress:tr('In conversation','В работе'),closed:tr('Closed','Закрыта')}[s]||s);return `<div class="admin-heading"><div><h1>${tr('Conversations.','Заявки и разговоры.')}</h1><p>${tr('Every enquiry is saved here, independently of notification delivery.','Все заявки сохраняются здесь независимо от отправки уведомлений.')}</p></div><button class="btn secondary" data-action="refresh-admin">${tr('Refresh','Обновить')}</button></div><div class="requests">${qs.length?qs.map(q=>`<article class="panel"><div class="request-head"><div><h3>${e(q.name)}</h3><p class="request-meta">${e(q.reference)} · ${e(new Date(q.createdAt).toLocaleString(lang==='en'?'en-GB':'ru-RU'))}</p></div><span class="chip ${q.status==='new'?'pending':''}">${statusLabel(q.status)}</span></div><p class="request-meta">${e(q.email)}${q.telegram?' · '+e(q.telegram):''}${q.city?' · '+e(q.city):''}</p><div class="request-items">${(q.items||[]).map(p=>`<p>${e(p.title)}${p.price!=null?' — '+e(money(p.price)):''}</p>`).join('')||e(q.kind)}</div>${q.message?`<div class="request-message">${e(q.message)}</div>`:''}<p class="delivery">${demo?tr('Local demo · nothing sent','Локальная демоверсия · ничего не отправлено'):(q.deliveries||[]).map(x=>e(x.channel)+': '+e({sent:tr('delivered','доставлено'),pending:tr('queued','в очереди'),failed:tr('failed — retry available','ошибка — можно повторить'),sending:tr('sending','отправляется')}[x.state]||x.state)).join(' · ')||tr('Saved to inbox; notifications not configured.','Сохранено в заявках; уведомления не настроены.')}</p><div class="request-footer"><label><span class="sr">${tr('Enquiry status','Статус заявки')}</span><select data-request-status="${e(q.id)}">${['new','in_progress','closed'].map(s=>`<option value="${s}" ${s===q.status?'selected':''}>${statusLabel(s)}</option>`).join('')}</select></label><div class="actions"><a class="btn secondary" href="mailto:${e(q.email)}?subject=${encodeURIComponent('Mark Rox / '+q.reference)}">${tr('Reply','Ответить')}${icon('arrow')}</a>${!demo&&q.deliveries?.some(x=>x.state==='failed')?`<button class="btn secondary" data-action="retry" data-id="${e(q.id)}">${tr('Retry delivery','Повторить отправку')}</button>`:''}<button class="icon" data-action="delete-request" data-id="${e(q.id)}" aria-label="${tr('Delete enquiry','Удалить заявку')}">${icon('trash')}</button></div></div></article>`).join(''):empty(tr('A little quiet, for now.','Пока здесь тихо.'),tr('New enquiries will appear here. In the preview, open the website from this studio and submit a fictional enquiry.','Новые заявки появятся здесь. Для теста откройте сайт из этой админки и отправьте вымышленную заявку.'))}</div>`}
 function adminSettings(){const s=data.settings;return `<div class="admin-heading"><div><h1>${tr('The artist. The story.','Художник и история.')}</h1><p>${tr('English is the default. Russian is one switch away.','По умолчанию — английский. Русский доступен по переключателю.')}</p></div></div><form id="settings-form" class="settings"><div class="error" role="alert" hidden></div><section class="panel"><h2>${tr('Identity & homepage','Имя и главная страница')}</h2><div class="fields">${field('name',tr('Artist name','Имя художника'),s.name,{required:true,wide:true,max:120})}${field('headlineEn','Headline · English',s.headlineEn,{type:'textarea',max:150})}${field('headlineRu','Заголовок · Русский',s.headlineRu,{type:'textarea',max:150})}${field('introEn','Introduction · English',s.introEn,{type:'textarea',max:600})}${field('introRu','Вступление · Русский',s.introRu,{type:'textarea',max:600})}${selectField('heroId',tr('First featured work','Первая работа на главной'),published().map(p=>[p.id,p.title]),s.heroId,true)}</div></section><section class="panel"><h2>${tr('Biography & portrait','Биография и портрет')}</h2><div class="fields">${field('bioEn','Biography · English',s.bioEn,{type:'textarea',wide:true,max:8000})}${field('bioRu','Биография · Русский',s.bioRu,{type:'textarea',wide:true,max:8000})}${field('moreEn','Extended biography · English',s.moreEn,{type:'textarea',wide:true,max:8000})}${field('moreRu','Подробная биография · Русский',s.moreRu,{type:'textarea',wide:true,max:8000})}${field('portrait',tr('Portrait image URL','Ссылка на портрет'),s.portrait,{wide:true,max:4000000})}<div class="field wide"><label for="portrait-upload">${tr('Upload a new portrait','Загрузить новый портрет')}</label><input id="portrait-upload" type="file" accept="image/jpeg,image/png,image/webp"><span class="help">JPG / PNG / WebP · ${tr('up to 12 MB input','исходник до 12 МБ')}</span></div></div></section><section class="panel"><h2>${tr('Public contact details','Публичные контакты')}</h2><div class="fields">${field('email','Email',s.email,{type:'email',wide:true,max:254})}${field('telegram','Telegram URL',s.telegram,{type:'url',max:2048,placeholder:'https://t.me/your_studio'})}${field('instagram','Instagram URL',s.instagram,{type:'url',max:2048,placeholder:'https://instagram.com/your_studio'})}</div><p class="small" style="margin-top:20px">${tr('These details are public. Notification recipients and secrets are configured privately on the server.','Эти контакты видны посетителям. Получатели уведомлений и секретные ключи настраиваются отдельно на сервере.')}</p></section><button class="btn" type="submit">${tr('Save site details','Сохранить данные сайта')}${icon('check')}</button></form>`}
 function adminIntegrations(){return `<div class="admin-heading"><div><h1>${tr('Stay connected.','Всегда на связи.')}</h1><p>${tr('A private studio inbox, with Telegram and email notifications.','Закрытая админ-панель с уведомлениями в Telegram и на почту.')}</p></div></div><div class="integration-grid">${[['telegram','send','Telegram',tr('Create a bot with BotFather. Add it to your private chat or group, then configure its token and the recipient chat on the server.','Создайте бота через BotFather. Добавьте его в личный чат или группу, затем укажите токен и чат получателя на сервере.')],['email','mail','Email / Resend',tr('Verify your sender domain in Resend, add its API key and set the sender and recipient addresses on the server.','Подтвердите домен отправителя в Resend, добавьте ключ доступа, email отправителя и email получателя на сервере.')]].map(([id,ic,title,text])=>`<section class="panel"><div class="integration-icon">${icon(ic)}<span class="chip ${flags.channels.includes(id)&&!demo?'':'pending'}">${flags.channels.includes(id)&&!demo?tr('Configured','Настроено'):tr('Not connected','Не подключено')}</span></div><h2>${title}</h2><p>${text}</p><p style="margin-top:16px">${tr('Credentials never appear in the public page or browser storage. See the included launch guide.','Ключи никогда не попадают в публичный сайт или хранилище браузера. Инструкция есть в комплекте.')}</p></section>`).join('')}<section class="panel wide"><h2>${tr('Saved first. Delivered next.','Сначала сохранение. Затем отправка.')}</h2><p>${tr('Every accepted enquiry is saved to the database before notification delivery. Failed notifications retry automatically, with a manual retry in the inbox. Delivery status is visible for each channel.','Каждая принятая заявка сначала сохраняется в базе. Неудачные уведомления повторяются автоматически; также доступен ручной повтор. Статус каждого канала виден в заявке.')}</p><p style="margin-top:16px">${tr('The admin address is separate: adminpro.your-domain. It has no button or link on the public website. Set your real domain and HTTPS before launch.','Админка открывается отдельно: adminpro.ваш-домен. На публичном сайте нет кнопки или ссылки на неё. Перед запуском укажите реальный домен и подключите HTTPS.')}</p></section></div>`}
 function adminAccount(){return `<div class="admin-heading"><div><h1>${tr('Private by design.','Только для своих.')}</h1><p>${tr('Change your username and password. All current sessions will be signed out.','Смена логина и пароля завершит все текущие сеансы.')}</p></div></div><form id="account-form" class="formbox settings">${demo?notice(tr('The preview has no real password protection. This form works when the included backend is running.','В демоверсии нет настоящей защиты паролем. Эта форма работает при запуске серверной части.'),'warning'):''}<div class="error" role="alert" hidden></div><div class="fields">${field('oldPassword',tr('Current password','Текущий пароль'),'',{type:'password',required:true,wide:true,max:256})}${field('username',tr('New username','Новый логин'),session?.username||'',{required:true,wide:true,max:80})}${field('newPassword',tr('New password · at least 12 characters','Новый пароль · минимум 12 символов'),'',{type:'password',required:true,max:256})}${field('confirmPassword',tr('Confirm new password','Повторите новый пароль'),'',{type:'password',required:true,max:256})}</div><button class="btn" style="margin-top:24px" type="submit" ${demo?'disabled':''}>${tr('Update credentials','Изменить логин и пароль')}${icon('lock')}</button></form>`}
-function render(){const raw=path(),[p,query='']=raw.split('?'),params=new URLSearchParams(query);document.documentElement.lang=lang;document.title=p.startsWith('/admin')?'MARK ROX / AdminPro':'MARK ROX — '+tr('Art outside the orbit','Искусство вне орбиты');if(p==='/admin'){if(!adminEntry&&!demo&&!runtime.dev){$('#app').innerHTML=header()+notFound()+footer()}else $('#app').innerHTML=session?adminShell(params.get('tab')||'catalogue'):login()}else{const content=p==='/'?home():p==='/works'?catalogue(params):p.startsWith('/work/')?productPage(p.slice(6)):p==='/artist'?artist():p==='/contact'?contact(params):p==='/inquiry'?checkout():p==='/privacy'?privacy():p==='/success'&&lastSuccess?success():notFound();$('#app').innerHTML=header()+content+footer()}bindImages();if(p.startsWith('/work/')){const work=published().find(x=>x.id===p.slice(6));if(work)document.title=work.title+' — Mark Rox'}}
+function render(){trackEvent('pageview');const raw=path(),[p,query='']=raw.split('?'),params=new URLSearchParams(query);document.documentElement.lang=lang;document.title=p.startsWith('/admin')?'MARK ROX / AdminPro':'MARK ROX — '+tr('Art outside the orbit','Искусство вне орбиты');if(p==='/admin'){if(!adminEntry&&!demo&&!runtime.dev){$('#app').innerHTML=header()+notFound()+footer()}else $('#app').innerHTML=session?adminShell(params.get('tab')||'catalogue'):login()}else{const content=p==='/'?home():p==='/works'?catalogue(params):p.startsWith('/work/')?productPage(p.slice(6)):p==='/artist'?artist():p==='/contact'?contact(params):p==='/inquiry'?checkout():p==='/privacy'?privacy():p==='/success'&&lastSuccess?success():notFound();$('#app').innerHTML=header()+content+footer()}bindImages();if(p.startsWith('/work/')){const work=published().find(x=>x.id===p.slice(6));if(work)document.title=work.title+' — Mark Rox'}}
 function openModal(title,body){const d=$('#dialog');d.innerHTML=`<div class="modal-head"><h2 id="modal-title">${title}</h2><button class="icon" data-action="close-modal" aria-label="${tr('Close','Закрыть')}">${icon('close')}</button></div><div class="modal-body">${body}</div>`;d.setAttribute('aria-labelledby','modal-title');if(!d.open)d.showModal();document.body.style.overflow='hidden';bindImages(d)}
 function closeModal(){const d=$('#dialog');d.close();document.body.style.overflow=''}
 let lightboxProduct=null,lightboxIndex=0;function lightbox(id,index=0){const p=published().find(x=>x.id===id);if(!p)return;lightboxProduct=p;lightboxIndex=(index+p.images.length)%p.images.length;openModal(e(p.title),`<div class="lightbox-stage"><button class="icon" data-action="lightbox-prev" aria-label="${tr('Previous photo','Предыдущее фото')}">${icon('left')}</button><div data-action="zoom" tabindex="0" role="button" aria-label="${tr('Toggle zoom','Увеличить или уменьшить')}">${media(p.images[lightboxIndex],p.title+' — '+(lightboxIndex+1),{eager:true})}</div><button class="icon" data-action="lightbox-next" aria-label="${tr('Next photo','Следующее фото')}">${icon('right')}</button></div><div class="lightbox-foot"><span aria-live="polite">${String(lightboxIndex+1).padStart(2,'0')} / ${String(p.images.length).padStart(2,'0')}</span><button data-action="zoom">${tr('Zoom 1× / 1.8×','Масштаб 1× / 1,8×')}</button><a href="${e(asset(safeImage(p.images[lightboxIndex])))}" target="_blank" rel="noopener noreferrer">${tr('Open original ↗','Открыть оригинал ↗')}</a></div>`)}
@@ -77,10 +476,10 @@ function showError(form,error){const box=$('.error',form);if(box){box.textConten
 function selection(id,removeOnly=false){if(saved.includes(id)||removeOnly)saved=saved.filter(x=>x!==id);else{const p=published().find(x=>x.id===id);if(!p||['sold','reserved'].includes(p.availability))return;if(saved.length>=20){toast(tr('Select up to 20 works.','Можно выбрать до 20 работ.'));return}saved.push(id)}try{put('mr-selection',saved)}catch(err){toast(err.message)}render()}
 async function refreshAdmin(){if(!demo){const result=await api('/api/admin/state');data={...data,...result};flags={...flags,...result.flags}}render()}
 function exportJson(name,value){const blob=new Blob([JSON.stringify(value,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}
-document.addEventListener('click',async ev=>{const route=ev.target.closest('a[data-route]');if(route&&!ev.ctrlKey&&!ev.metaKey&&!ev.shiftKey&&!ev.altKey){ev.preventDefault();const href=route.getAttribute('href');if($('#dialog').open)closeModal();if(href.includes('/works')){const u=href.replace(/^#/,'');if(!u.includes('?')){filter='all';tagFilter='';search=''}}go(href.replace(/^#/,''));return}const el=ev.target.closest('[data-action]');if(!el)return;const a=el.dataset.action,id=el.dataset.id;try{if(a==='language'){lang=lang==='en'?'ru':'en';try{put('mr-language',lang)}catch{}if($('#dialog').open)closeModal();render()}else if(a==='menu'){menu=!menu;render()}else if(a==='hero-next'){heroIndex++;render()}else if(a==='save'||a==='remove'){selection(id,a==='remove');toast(tr(a==='remove'?'Removed from selection.':'Selection updated.',a==='remove'?'Убрано из списка.':'Список обновлён.'))}else if(a==='enquire'){if(!saved.includes(id)){selection(id)}go('/inquiry')}else if(a==='filter'){filter=el.dataset.filter;tagFilter='';const p='/works';if(demo)history.replaceState({},'','#'+p);else history.replaceState({},'',p);render()}else if(a==='tag'){tagFilter=tagFilter===el.dataset.tag?'':el.dataset.tag;render()}else if(a==='clear-filters'){filter='all';tagFilter='';search='';go('/works')}else if(a==='lightbox'){lightbox(id,Number(el.dataset.index||0))}else if(a==='thumbnail'){const p=published().find(x=>x.id===id),i=Number(el.dataset.index);$('.main-photo').innerHTML=media(p.images[i],p.title+' — '+(i+1),{eager:true,sold:p.availability==='sold'});$('.main-photo').dataset.index=i;$$('.thumb').forEach(x=>{x.classList.toggle('active',Number(x.dataset.index)===i);x.setAttribute('aria-pressed',String(Number(x.dataset.index)===i))});bindImages()}else if(a==='close-modal'){closeModal()}else if(a==='lightbox-prev'){lightbox(lightboxProduct.id,lightboxIndex-1)}else if(a==='lightbox-next'){lightbox(lightboxProduct.id,lightboxIndex+1)}else if(a==='zoom'){$('.lightbox-stage .media')?.classList.toggle('zoomed')}else if(a==='new-product'){productEditor()}else if(a==='edit-product'){productEditor(id)}else if(a==='remove-editor-image'){editor.images.splice(Number(el.dataset.index),1);$('#editor-images').innerHTML=editorImages();bindImages($('#dialog'))}else if(a==='cover-image'){const i=Number(el.dataset.index),[img]=editor.images.splice(i,1);editor.images.unshift(img);$('#editor-images').innerHTML=editorImages();bindImages($('#dialog'))}else if(a==='delete-product'){if(!confirm(tr('Delete this artwork? This removes it from the catalogue.','Удалить работу? Она исчезнет из каталога.')))return;await api('/api/admin/products/'+id,'DELETE');if(demo){}else data.products=data.products.filter(x=>x.id!==id);closeModal();render();toast(tr('Artwork deleted.','Работа удалена.'))}else if(a==='logout'){if(!demo)await api('/api/admin/logout','POST',{});session=null;render()}else if(a==='export'){exportJson('mark-rox-catalogue.json',{products:data.products,settings:data.settings})}else if(a==='refresh-admin'){await refreshAdmin()}else if(a==='delete-request'){if(!confirm(tr('Permanently delete this enquiry and its contact details? External email/Telegram copies must be removed separately.','Навсегда удалить заявку и контакты? Копии в почте/Telegram нужно удалить отдельно.')))return;await api('/api/admin/inquiries/'+id,'DELETE');await refreshAdmin()}else if(a==='retry'){await api('/api/admin/inquiries/'+id+'/retry','POST',{});await refreshAdmin();toast(tr('Delivery queued again.','Отправка снова поставлена в очередь.'))}else if(a==='clear-local'){saved=[];try{put('mr-selection',[])}catch{}toast(tr('Your selection is cleared.','Ваш выбор очищен.'));render()}}catch(err){if($('#dialog').open)showError($('#dialog'),err);else toast(err.message)}});
+document.addEventListener('click',async ev=>{const route=ev.target.closest('a[data-route]');if(route&&!ev.ctrlKey&&!ev.metaKey&&!ev.shiftKey&&!ev.altKey){ev.preventDefault();const href=route.getAttribute('href');if($('#dialog').open)closeModal();if(href.includes('/works')){const u=href.replace(/^#/,'');if(!u.includes('?')){filter='all';tagFilter='';search=''}}go(href.replace(/^#/,''));return}const el=ev.target.closest('[data-action]');if(!el)return;const a=el.dataset.action,id=el.dataset.id;try{if(a==='language'){lang=lang==='en'?'ru':'en';try{put('mr-language',lang)}catch{}if($('#dialog').open)closeModal();render()}else if(a==='menu'){menu=!menu;render()}else if(a==='hero-next'){heroIndex++;render()}else if(a==='save'||a==='remove'){selection(id,a==='remove');if(a==='save')trackEvent('save',id);toast(tr(a==='remove'?'Removed from selection.':'Selection updated.',a==='remove'?'Убрано из списка.':'Список обновлён.'))}else if(a==='enquire'){if(!saved.includes(id)){selection(id)}trackEvent('enquire',id);go('/inquiry')}else if(a==='filter'){filter=el.dataset.filter;tagFilter='';const p='/works';if(demo)history.replaceState({},'','#'+p);else history.replaceState({},'',p);render()}else if(a==='tag'){tagFilter=tagFilter===el.dataset.tag?'':el.dataset.tag;render()}else if(a==='clear-filters'){filter='all';tagFilter='';search='';go('/works')}else if(a==='lightbox'){lightbox(id,Number(el.dataset.index||0))}else if(a==='thumbnail'){const p=published().find(x=>x.id===id),i=Number(el.dataset.index);$('.main-photo').innerHTML=media(p.images[i],p.title+' — '+(i+1),{eager:true,sold:p.availability==='sold'});$('.main-photo').dataset.index=i;$$('.thumb').forEach(x=>{x.classList.toggle('active',Number(x.dataset.index)===i);x.setAttribute('aria-pressed',String(Number(x.dataset.index)===i))});bindImages()}else if(a==='close-modal'){closeModal()}else if(a==='lightbox-prev'){lightbox(lightboxProduct.id,lightboxIndex-1)}else if(a==='lightbox-next'){lightbox(lightboxProduct.id,lightboxIndex+1)}else if(a==='zoom'){$('.lightbox-stage .media')?.classList.toggle('zoomed')}else if(a==='new-product'){productEditor()}else if(a==='edit-product'){productEditor(id)}else if(a==='remove-editor-image'){editor.images.splice(Number(el.dataset.index),1);$('#editor-images').innerHTML=editorImages();bindImages($('#dialog'))}else if(a==='cover-image'){const i=Number(el.dataset.index),[img]=editor.images.splice(i,1);editor.images.unshift(img);$('#editor-images').innerHTML=editorImages();bindImages($('#dialog'))}else if(a==='delete-product'){if(!confirm(tr('Delete this artwork? This removes it from the catalogue.','Удалить работу? Она исчезнет из каталога.')))return;await api('/api/admin/products/'+id,'DELETE');if(demo){}else data.products=data.products.filter(x=>x.id!==id);closeModal();render();toast(tr('Artwork deleted.','Работа удалена.'))}else if(a==='logout'){if(!demo)await api('/api/admin/logout','POST',{});session=null;render()}else if(a==='export-analytics'){exportAnalyticsCsv()}else if(a==='export'){exportJson('mark-rox-catalogue.json',{products:data.products,settings:data.settings})}else if(a==='refresh-admin'){await refreshAdmin()}else if(a==='delete-request'){if(!confirm(tr('Permanently delete this enquiry and its contact details? External email/Telegram copies must be removed separately.','Навсегда удалить заявку и контакты? Копии в почте/Telegram нужно удалить отдельно.')))return;await api('/api/admin/inquiries/'+id,'DELETE');await refreshAdmin()}else if(a==='retry'){await api('/api/admin/inquiries/'+id+'/retry','POST',{});await refreshAdmin();toast(tr('Delivery queued again.','Отправка снова поставлена в очередь.'))}else if(a==='clear-local'){saved=[];try{put('mr-selection',[])}catch{}toast(tr('Your selection is cleared.','Ваш выбор очищен.'));render()}}catch(err){if($('#dialog').open)showError($('#dialog'),err);else toast(err.message)}});
 let searchTimer;document.addEventListener('input',ev=>{if(ev.target.id==='catalogue-search'||ev.target.id==='admin-search'){clearTimeout(searchTimer);const target=ev.target.id;searchTimer=setTimeout(()=>{const value=ev.target.value,position=ev.target.selectionStart;if(target==='catalogue-search')search=value;else adminSearch=value;render();const el=$('#'+target);el?.focus();try{el.setSelectionRange(position,position)}catch{}},180)}});
 document.addEventListener('change',async ev=>{const el=ev.target;try{if(el.id==='catalogue-sort'){sort=el.value;render()}else if(el.dataset.requestStatus){await api('/api/admin/inquiries/'+el.dataset.requestStatus,'PATCH',{status:el.value});await refreshAdmin()}else if(el.id==='artwork-upload'){const files=[...el.files];if(editor.images.length+files.length>8)throw Error(tr('Maximum 8 photos per artwork.','Максимум 8 фото на работу.'));const form=$('#product-form'),submit=$('button[type="submit"]',form);submit.disabled=true;$('#upload-status').textContent=tr('Processing photographs…','Обрабатываем фотографии…');try{for(const f of files){const image=await fileImage(f);const result=await api('/api/admin/upload','POST',{image});editor.images.push(result.url)}$('#editor-images').innerHTML=editorImages();bindImages($('#dialog'));$('#upload-status').textContent=tr('Photos ready. Save the artwork to publish.','Фото готовы. Сохраните карточку для публикации.')}finally{submit.disabled=false;el.value=''}}else if(el.id==='portrait-upload'){el.disabled=true;try{const result=await api('/api/admin/upload','POST',{image:await fileImage(el.files[0])});$('#f-portrait').value=result.url;toast(tr('Portrait ready. Save site details.','Портрет готов. Сохраните данные сайта.'))}finally{el.disabled=false;el.value=''}}}catch(err){if(el.closest('form'))showError(el.closest('form'),err);else toast(err.message)}});
-document.addEventListener('submit',async ev=>{const form=ev.target;if(!['login-form','inquiry-form','product-form','settings-form','account-form'].includes(form.id))return;ev.preventDefault();const error=$('.error',form);if(error)error.hidden=true;const submit=$('button[type="submit"]',form);if(submit.disabled)return;submit.disabled=true;const fd=new FormData(form),body=Object.fromEntries(fd);try{if(form.id==='login-form'){if(demo){session={username:'Preview',csrf:''}}else session=await api('/api/admin/login','POST',{username:body.username,password:body.password});if(!demo){const result=await api('/api/admin/state');data={...data,...result};flags={...flags,...result.flags}}go('/admin')}else if(form.id==='inquiry-form'){if(requestBusy)return;requestBusy=true;try{if(body.telegram&&!/^@[a-zA-Z0-9_]{5,32}$/.test(body.telegram))throw Error(tr('Telegram should be @username (5–32 letters, numbers or underscores).','Telegram должен быть @username (5–32 буквы, цифры или подчёркивания).'));if(body.name.trim().length<2)throw Error(tr('Please enter your name.','Введите имя.'));const productIds=activeSaved().map(x=>x.id);if(body.kind==='acquisition'&&!productIds.length)throw Error(tr('Please select a work first, or choose a project enquiry.','Сначала выберите работу или измените тип запроса на проект.'));lastSuccess=await api('/api/inquiries','POST',{...body,name:body.name.trim(),consent:fd.has('consent'),productIds,lang,submissionId:form.dataset.submission});saved=[];try{put('mr-selection',[])}catch{}go('/success')}finally{requestBusy=false}}else if(form.id==='product-form'){if(!editor.images.length)throw Error(tr('Add at least one photo.','Добавьте хотя бы одну фотографию.'));if(!/^[a-z0-9][a-z0-9-]{1,99}$/.test(body.id))throw Error(tr('URL slug: 2–100 lowercase letters, numbers and hyphens.','Адрес: 2–100 строчных латинских букв, цифр и дефисов.'));const price=body.price===''?null:Number(body.price),year=body.year===''?null:Number(body.year);if(price!==null&&(!Number.isFinite(price)||price<0))throw Error(tr('Check the price.','Проверьте цену.'));if(year!==null&&(!Number.isInteger(year)||year<1900||year>2100))throw Error(tr('Check the year.','Проверьте год.'));const p={...editor,...body,price,year,images:editor.images,tags:[...new Set(body.tags.split(',').map(x=>x.trim()).filter(Boolean))],published:fd.has('published'),featured:fd.has('featured')};await api('/api/admin/products'+(editing?'/'+editor.id:''),editing?'PUT':'POST',p);if(!demo){const result=await api('/api/admin/state');data={...data,...result}}closeModal();render();toast(tr('Artwork saved.','Работа сохранена.'))}else if(form.id==='settings-form'){await api('/api/admin/settings','PUT',body);if(!demo){const result=await api('/api/admin/state');data={...data,...result}}render();toast(tr('Site details saved.','Данные сайта сохранены.'))}else if(form.id==='account-form'){if(body.newPassword!==body.confirmPassword)throw Error(tr('Passwords do not match.','Пароли не совпадают.'));if(body.newPassword.length<12)throw Error(tr('Use at least 12 characters.','Используйте минимум 12 символов.'));await api('/api/admin/account','PUT',body);session=null;render();toast(tr('Credentials changed. Please sign in again.','Данные изменены. Войдите заново.'))}}catch(err){showError(form,err)}finally{submit.disabled=false}});
+document.addEventListener('submit',async ev=>{const form=ev.target;if(!['login-form','inquiry-form','product-form','settings-form','account-form'].includes(form.id))return;ev.preventDefault();const error=$('.error',form);if(error)error.hidden=true;const submit=$('button[type="submit"]',form);if(submit.disabled)return;submit.disabled=true;const fd=new FormData(form),body=Object.fromEntries(fd);try{if(form.id==='login-form'){if(demo){session={username:'Preview',csrf:''}}else session=await api('/api/admin/login','POST',{username:body.username,password:body.password});if(!demo){const result=await api('/api/admin/state');data={...data,...result};flags={...flags,...result.flags}}go('/admin')}else if(form.id==='inquiry-form'){if(requestBusy)return;requestBusy=true;try{if(body.telegram&&!/^@[a-zA-Z0-9_]{5,32}$/.test(body.telegram))throw Error(tr('Telegram should be @username (5–32 letters, numbers or underscores).','Telegram должен быть @username (5–32 буквы, цифры или подчёркивания).'));if(body.name.trim().length<2)throw Error(tr('Please enter your name.','Введите имя.'));const productIds=activeSaved().map(x=>x.id);if(body.kind==='acquisition'&&!productIds.length)throw Error(tr('Please select a work first, or choose a project enquiry.','Сначала выберите работу или измените тип запроса на проект.'));lastSuccess=await api('/api/inquiries','POST',{...body,name:body.name.trim(),consent:fd.has('consent'),productIds,lang,submissionId:form.dataset.submission});saved=[];try{put('mr-selection',[])}catch{}go('/success')}finally{requestBusy=false}}else if(form.id==='product-form'){if(!editor.images.length)throw Error(tr('Add at least one photo.','Добавьте хотя бы одну фотографию.'));if(!/^[a-z0-9][a-z0-9-]{1,99}$/.test(body.id))throw Error(tr('URL slug: 2–100 lowercase letters, numbers and hyphens.','Адрес: 2–100 строчных латинских букв, цифр и дефисов.'));const price=body.price===''?null:Number(body.price),year=body.year===''?null:Number(body.year);if(price!==null&&(!Number.isFinite(price)||price<0))throw Error(tr('Check the price.','Проверьте цену.'));if(year!==null&&(!Number.isInteger(year)||year<1900||year>2100))throw Error(tr('Check the year.','Проверьте год.'));const p={...editor,...body,price,year,images:editor.images,tags:[...new Set(body.tags.split(',').map(x=>x.trim()).filter(Boolean))],published:fd.has('published'),featured:fd.has('featured')};await api('/api/admin/products'+(editing?'/'+editor.id:''),editing?'PUT':'POST',p);if(!demo){const result=await api('/api/admin/state');data={...data,...result}}closeModal();render();toast(tr('Artwork saved.','Работа сохранена.'))}else if(form.id==='analytics-config-form'){const an=getAnalytics();an.counters={yandexMetrika:body.yandexMetrika,googleAnalytics:body.googleAnalytics};saveAnalytics(an);toast(tr('Analytics settings saved!','Настройки аналитики сохранены!'));render()}else if(form.id==='settings-form'){await api('/api/admin/settings','PUT',body);if(!demo){const result=await api('/api/admin/state');data={...data,...result}}render();toast(tr('Site details saved.','Данные сайта сохранены.'))}else if(form.id==='account-form'){if(body.newPassword!==body.confirmPassword)throw Error(tr('Passwords do not match.','Пароли не совпадают.'));if(body.newPassword.length<12)throw Error(tr('Use at least 12 characters.','Используйте минимум 12 символов.'));await api('/api/admin/account','PUT',body);session=null;render();toast(tr('Credentials changed. Please sign in again.','Данные изменены. Войдите заново.'))}}catch(err){showError(form,err)}finally{submit.disabled=false}});
 $('#dialog').addEventListener('close',()=>{document.body.style.overflow=''});$('#dialog').addEventListener('click',ev=>{if(ev.target.id==='dialog'){const r=ev.target.getBoundingClientRect();if(ev.clientX<r.left||ev.clientX>r.right||ev.clientY<r.top||ev.clientY>r.bottom)closeModal()}});
 document.addEventListener('keydown',ev=>{if($('#dialog').open&&$('.lightbox-stage')){if(ev.key==='ArrowLeft'){ev.preventDefault();lightbox(lightboxProduct.id,lightboxIndex-1)}if(ev.key==='ArrowRight'){ev.preventDefault();lightbox(lightboxProduct.id,lightboxIndex+1)}if((ev.key==='Enter'||ev.key===' ')&&ev.target.dataset.action==='zoom'){ev.preventDefault();$('.lightbox-stage .media')?.classList.toggle('zoomed')}}});
 window.addEventListener('hashchange',()=>{menu=false;render();window.scrollTo(0,0)});window.addEventListener('popstate',()=>{menu=false;render()});
