@@ -399,7 +399,10 @@
         "https://static.tildacdn.one/stor3866-6138-4466-a237-656538313961/18081610.jpg",
         "https://static.tildacdn.one/stor3166-6566-4961-a234-373461643230/76386583.jpg",
         "https://static.tildacdn.one/stor3738-6432-4433-b562-663735663637/96605653.jpg",
-        "https://static.tildacdn.one/stor3364-6262-4064-b235-633337303334/82488116.png"
+        "https://static.tildacdn.one/stor3364-6262-4064-b235-633337303334/82488116.png",
+        "https://www.artevistas.eu/wp-content/uploads/2026/07/Mark-Rox-%E2%80%93-ARTonaut-13-01-scaled.jpg",
+        "https://www.artevistas.eu/wp-content/uploads/2026/07/Mark-Rox-%E2%80%93-ARTonaut-13-02-scaled.jpg",
+        "https://www.artevistas.eu/wp-content/uploads/2026/07/Mark-Rox-%E2%80%93-ARTonaut-13-03-scaled.jpg"
       ],
       "sku": "ESMROX2549",
       "tags": [
@@ -464,7 +467,10 @@
         "https://static.tildacdn.one/stor3237-3739-4232-a332-386466313731/7c1b7a57eb92b5cac553c29a69ff3e26.png",
         "https://static.tildacdn.one/stor6133-3331-4639-a539-636232373836/64193884.jpg",
         "https://static.tildacdn.one/stor6230-6466-4465-a130-313734353137/70994575.jpg",
-        "https://static.tildacdn.one/stor3932-3065-4138-b762-613364653436/72605701.jpg"
+        "https://static.tildacdn.one/stor3932-3065-4138-b762-613364653436/72605701.jpg",
+        "https://www.artevistas.eu/wp-content/uploads/2026/07/Mark-Rox-%E2%80%93-ARTonaut-11-01-scaled.jpg",
+        "https://www.artevistas.eu/wp-content/uploads/2026/07/Mark-Rox-%E2%80%93-ARTonaut-11-02-scaled.jpg",
+        "https://www.artevistas.eu/wp-content/uploads/2026/07/Mark-Rox-%E2%80%93-ARTonaut-11-03-scaled.jpg"
       ],
       "sku": "ESMROX2547",
       "tags": [
@@ -883,7 +889,9 @@
         "https://static.tildacdn.one/stor3461-6238-4435-a537-646135333232/16265575.jpg",
         "https://static.tildacdn.one/stor3362-6266-4435-b636-373030303639/87980788.jpg",
         "https://static.tildacdn.one/stor3338-3236-4636-b232-373363356132/63849478.png",
-        "https://static.tildacdn.one/stor6265-6334-4163-b466-316165363035/95585769.png"
+        "https://static.tildacdn.one/stor6265-6334-4163-b466-316165363035/95585769.png",
+        "https://www.artevistas.eu/wp-content/uploads/2025/09/Mark-Rox-ARTonaut-12-Grande.jpeg",
+        "https://www.artevistas.eu/wp-content/uploads/2025/09/Mark-Rox-ARTonaut-12-web.jpg"
       ],
       "sku": "TIL-N6EVYGUD",
       "tags": [
@@ -922,6 +930,34 @@
       "featured": false,
       "published": true,
       "version": 1
+    },
+    {
+      "id": "artonaut-18",
+      "title": "ARTonaut #18",
+      "category": "painting",
+      "availability": "sold",
+      "price": null,
+      "year": 2026,
+      "dimensions": "162 × 130 × 2 cm",
+      "mediumEn": "Acrylics, neon pigments & texture paste on canvas",
+      "mediumRu": "Акрил, неоновые пигменты и текстурная паста на холсте",
+      "descriptionEn": "An astronaut and a bicycle meet in an impossible landscape. A familiar symbol of childhood and freedom enters a world of space and technology. UV-reactive pigments reveal another layer under ultraviolet light.",
+      "descriptionRu": "Астронавт и велосипед встречаются в невозможном пространстве. Знакомый символ детства и свободы оказывается в мире космоса и технологий. Под ультрафиолетом пигменты раскрывают дополнительный цветовой слой.",
+      "images": [
+        "https://www.artevistas.eu/wp-content/uploads/2026/04/Mark-Rox-ARTonaute-18-Grande.jpeg",
+        "https://www.artevistas.eu/wp-content/uploads/2026/04/Mark-Rox-ARTonaute-18-web-scaled.jpg"
+      ],
+      "sku": "CUMROX3475",
+      "tags": [
+        "ARTonaut",
+        "Street art",
+        "Canvas",
+        "UV-reactive"
+      ],
+      "sourceUrl": "https://www.artevistas.eu/product/mark-rox-artonaut-18/",
+      "featured": false,
+      "published": true,
+      "version": 1
     }
   ],
   "settings": {
@@ -930,13 +966,13 @@
     "headlineRu": "Искусство.\nВне\nорбиты.",
     "introEn": "Street energy. Freedom of form. Paintings and sculptures that shift the way we see the world.",
     "introRu": "Энергия улиц. Свобода формы. Живопись и скульптура, которые меняют привычный взгляд на мир.",
-    "bioEn": "Mark Rox is an artist from Baltiysk in the Kaliningrad region. Since 2008, he has worked across graffiti, street art, painting, digital media and 3D illusions. His practice moves from city walls to collectible objects, without settling into a single medium.",
-    "bioRu": "Mark Rox — художник из Балтийска, Калининградская область. С 2008 года работает с граффити, уличным искусством, живописью, цифровыми медиа и 3D-иллюзиями. Его практика простирается от городских стен до коллекционных объектов и не ограничивается одной техникой.",
+    "bioEn": "Mark Rox (b. 1993, Baltiysk, Russia) is a multidisciplinary artist working across street art, graffiti, painting, sculpture, digital art and 3D illusions. His practice began in 2008 and has since crossed borders, from Russia to Barcelona, Amsterdam and Riyadh.\n\nHe founded the graffiti team From the Heart and the wall-painting company Roxart, and won the Chetrapromart graffiti competition in 2016. He is a permanent artist at Artevistas Gallery in Barcelona.",
+    "bioRu": "Марк Рокс (род. 1993, Балтийск, Россия) — мультидисциплинарный художник, работающий со стрит-артом, граффити, живописью, скульптурой, цифровым искусством и 3D-иллюзиями. Начав практику в 2008 году, он вышел за географические границы: его работы представлены от России до Барселоны, Амстердама и Эр-Рияда.\n\nОснователь граффити-команды From the Heart и компании по росписи стен Roxart, победитель конкурса Chetrapromart 2016 года. Постоянный художник Artevistas Gallery в Барселоне.",
     "moreEn": "He founded the From the Heart graffiti team and the wall-painting company Roxart, and won the Chetrapromart graffiti competition in 2016. His projects have reached Barcelona, Amsterdam and Riyadh, among other cities. Mark Rox is a permanent artist at Artevistas Gallery.",
     "moreRu": "Основал граффити-команду «От сердца» и компанию Roxart, а в 2016 году победил в конкурсе «Четрапромарт». Среди городов его проектов — Барселона, Амстердам и Эр-Рияд. Mark Rox — постоянный художник Artevistas Gallery.",
     "portrait": "https://www.artevistas.eu/wp-content/uploads/2025/01/Foto-de-artista-1.jpg",
     "email": "",
-    "instagram": "",
+    "instagram": "https://www.instagram.com/pop.art.pov",
     "telegram": "",
     "heroId": "artonaut-true-style",
     "source": "https://www.artevistas.eu/artist/mark-rox-pop-art-pov/"
